@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Adventure Time!</title>
+    <link>http://example.com/categories/</link>
+    <description>Recent content in Categories on Adventure Time!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Episodes</title>
+      <link>http://example.com/categories/episodes/</link>
+      <pubDate>Thu, 12 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/categories/episodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Season6</title>
+      <link>http://example.com/categories/season6/</link>
+      <pubDate>Thu, 12 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/categories/season6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
