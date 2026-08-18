@@ -1,81 +1,53 @@
 # daudmabena.github.io
 
 Personal portfolio site for Daud Mabena, published with GitHub Pages at
-[daudmabena.github.io](https://daudmabena.github.io). It lists my public
-repositories and short technical write-ups.
+[daudmabena.github.io](https://daudmabena.github.io).
+
+A single page covering what I build, the stack I work in, selected projects, and
+every public repository — with the project sections generated from the GitHub API
+so they do not go stale.
 
 <!--
-  Add a screenshot here once you have one: capture the site at 1440px wide, save
-  it as docs/screenshots/home.png, and reference it with a relative path. Leaving
-  a broken image tag in place is worse than having no screenshot, so this is a
-  comment until the file exists.
+  Add a screenshot once you have one: capture the site at 1440px wide, save it to
+  docs/screenshots/home.png, and reference it here with a relative path. This is a
+  comment rather than a broken image tag until the file exists.
 -->
 
-## About this site
+## Design and build
 
-A static site generated from a [gitfolio](https://github.com/imfunniee/gitfolio)
-template and then customised by hand. The generator reads `config.json`, pulls
-public repository data from the GitHub API, and writes plain HTML. There is no
-build step and no framework at runtime, which is the reason the site still works
-years after it was generated.
+Hand-written HTML, CSS, and JavaScript. No framework, no build step, and no
+runtime dependencies — the only external request is the avatar image from GitHub.
+That keeps it fast on slow connections, and means it cannot break because a CDN
+or a package went away.
 
-## Stack
-
-| Part | Detail |
-| --- | --- |
-| Output | Static HTML and CSS, no build step |
-| Hosting | GitHub Pages, served from the repository root |
-| Layout | [magic-grid](https://github.com/e-oj/Magic-Grid) for the masonry project grid |
-| Other | jQuery, animate.css, Font Awesome, Google Fonts, all from CDNs |
+- **Dark theme by default**, with a light theme and a manual toggle. The
+  preference follows the operating system until the visitor chooses, and is then
+  remembered in `localStorage`.
+- **Responsive** down to phone width, with a single-column layout and a
+  collapsible nav.
+- **Accessible**: semantic landmarks, a skip link, visible focus states,
+  keyboard-operable nav and toggle, and `prefers-reduced-motion` respected.
+- **Themed through CSS custom properties**, so the whole palette can be changed
+  in one block at the top of the stylesheet.
 
 ## Structure
 
 ```
-index.html            The full site, with repository cards rendered into the markup
-index.css             Styles, including the light and dark colour variables
-config.json           Original gitfolio configuration: username, display name, sort order
-blog/                 One directory per write-up, each containing an index.html
-dist/                 Original generator output, kept as a reference copy
+index.html               The page. Two regions are generated; the rest is hand-written
+assets/
+  css/site.css           All styles, driven by custom properties
+  js/site.js             Theme toggle, mobile nav, active section, reveal on scroll
 tools/
-  update_site.py      Refreshes the project cards from the GitHub API
-  site.config.json    Which repositories appear, and in what order
+  update_site.py         Regenerates the project sections from the GitHub API
+  site.config.json       Which repositories appear, which are featured, and the order
 .github/workflows/
-  update-site.yml     Runs the refresh weekly, and on demand
+  update-site.yml        Runs the refresh weekly, and on demand
+blog/                    An old draft, not linked from the site (see Known limitations)
 ```
-
-The site is served from the repository root, so `index.html` there is the live
-page. `dist/` holds the files as gitfolio originally produced them.
-
-## Keeping the project cards current
-
-The card list is part of `index.html` rather than fetched at page load, so it
-does not update on its own, and re-running gitfolio would discard the hand edits
-made since. `tools/update_site.py` solves that by rewriting only the card list:
-
-```bash
-python3 tools/update_site.py --check   # report what would change, write nothing
-python3 tools/update_site.py           # rewrite index.html if anything changed
-```
-
-It needs only Python 3 — no dependencies. Set `GITHUB_TOKEN` to raise the API
-rate limit from 60 requests an hour to 5000; without it a single run still fits
-inside the unauthenticated limit.
-
-Which repositories appear is controlled by `tools/site.config.json`: forks are
-excluded, `exclude` lists repositories to leave off with a reason for each, and
-`extra` pulls in repositories from outside the account. Cards are ordered by most
-recently pushed, so current work appears first.
-
-The **Update site** workflow runs this weekly and can be triggered from the
-Actions tab. It commits only when the card list has actually changed.
-
-A repository with no description renders as a card with the description line
-hidden. Adding a description on GitHub is the fix; it needs no change here.
 
 ## Running it locally
 
-No dependencies are required. Any static file server will do, because the page
-fetches `blog.json` over HTTP and will not work correctly from a `file://` URL:
+No dependencies. Any static file server will do:
 
 ```bash
 git clone https://github.com/daudmabena/daudmabena.github.io.git
@@ -83,30 +55,64 @@ cd daudmabena.github.io
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then open <http://localhost:8000>. Editing `index.html` or the files under
+`assets/` needs nothing more than a browser refresh.
 
-## Making changes
+## Keeping the project sections current
 
-- **Content and styling** — edit `index.html` and `index.css` directly. Changes
-  pushed to the default branch are published by GitHub Pages within a minute or two.
-- **Adding a write-up** — create `blog/<url-title>/index.html` following the
-  existing post as a model.
-- **Regenerating from the template** — running the generator again overwrites
-  `index.html` and discards any hand edits, so keep customisations noted before
-  doing it.
+Two regions of `index.html` are generated, each delimited by HTML comment
+markers. Everything outside them is hand-written and never touched, so the design
+can be edited freely:
+
+| Marker | Contents |
+| --- | --- |
+| `FEATURED:START` / `FEATURED:END` | Selected work — the projects listed in `featured` |
+| `REPOS:START` / `REPOS:END` | Every non-fork public repository not excluded |
+
+```bash
+python3 tools/update_site.py --check   # report what would change, write nothing
+python3 tools/update_site.py           # rewrite index.html if anything changed
+```
+
+Python 3 only, no packages. Set `GITHUB_TOKEN` to raise the API rate limit from
+60 requests an hour to 5000; a single run fits inside the unauthenticated limit
+without it.
+
+The **Update site** workflow runs this weekly and can be triggered from the
+Actions tab. It commits only when something actually changed.
+
+### Configuring what appears
+
+`tools/site.config.json`:
+
+- `featured` — projects shown in Selected work, in order. Their description and
+  topics are read from GitHub, so a repository with no description there is
+  skipped with a warning rather than published with placeholder text.
+- `exclude` — repositories to leave off, each with a note on why.
+- `extra` — repositories outside your own account, as `owner/name`.
+- `sort` / `order` — ordering for the repository grid; defaults to most recently
+  pushed first.
+- `include_forks` — off, which is why 292 forks are not listed.
+
+**The most valuable change you can make to this page** is writing a description
+and adding topics for a project on GitHub, then adding it to `featured`. The page
+picks the text up on the next run. Repositories with no description still appear
+in the grid, just as a name-only card.
 
 ## Known limitations
 
-- Several cards show no description or language because the underlying
-  repositories have none set on GitHub.
-- Third-party assets load from CDNs, so the page depends on those staying
-  available.
-- The page is built on jQuery and a masonry layout script from the original
-  template, and logs some deprecation warnings in the browser console. They are
-  cosmetic and predate the current content.
+- `blog/How-to-Link-Yii-frontend-to-Backend/` still contains Lorem ipsum
+  placeholder text from the old template, so it is deliberately not linked from
+  the page. Either write it or delete the directory.
+- No email address or LinkedIn link is published yet. Both are left out rather
+  than filled with a placeholder; the markup is ready and commented in the
+  contact section of `index.html`.
+- The repository grid is a snapshot written at generation time, not a live fetch,
+  so counts are at most a week old between runs.
 
-## Licence
+## History
 
-Site content is mine. The underlying template is
-[gitfolio](https://github.com/imfunniee/gitfolio) by
-[@imfunniee](https://github.com/imfunniee), used under its own licence.
+The site was previously generated by
+[gitfolio](https://github.com/imfunniee/gitfolio), which baked repository data
+into the HTML. The current page is a full rewrite; the old generated output and
+its `config.json` were removed and remain in the git history.

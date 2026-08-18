@@ -1,480 +1,679 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>daudmabena</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <link rel="stylesheet" href="index.css">
-  <link rel="icon" href="https://avatars0.githubusercontent.com/u/6223956?v=4" type="image/png"></head>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daud Mabena — Software Developer</title>
+
+    <meta
+      name="description"
+      content="Daud Mabena is a software developer in Dar es Salaam, Tanzania, building enterprise web systems, REST APIs, and integrations with Laravel, React, and Flutter."
+    />
+    <link rel="canonical" href="https://daudmabena.github.io/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://daudmabena.github.io/" />
+    <meta property="og:title" content="Daud Mabena — Software Developer" />
+    <meta
+      property="og:description"
+      content="Enterprise web systems, REST APIs, and integrations. Laravel, React, and Flutter. Based in Dar es Salaam, Tanzania."
+    />
+    <meta property="og:image" content="https://github.com/daudmabena.png?size=460" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@daudmabena" />
+
+    <link rel="icon" href="https://github.com/daudmabena.png?size=64" type="image/png" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
 
   <body>
-    <div id="loading">
-      <div id="spinner"></div>
-    </div>
-    <div id="profile">
-      <div id="profile_img" style="background: url(https://avatars0.githubusercontent.com/u/6223956?v=4) center;"></div>
-      <div id="username"><span style="display:block;">DAUD ABASS MABENA</span><a href="https://github.com/daudmabena">@daudmabena</a></div>
-      <div id="userbio" style="display: none;">undefined</div>
-      <div id="about">
-                <span style="display:block;"><i class="fas fa-users"></i> &nbsp; DYCODEDESINGS</span>
-                <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
-                <span style="display:none;"><i class="fas fa-link"></i> &nbsp; <a href=""></a></span>
-                <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Dar es salaam, Tanzania</span>
-                <span style="display:block;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
-                <div class="socials">
-                <span style="display:none !important;"><a href="https://www.twitter.com/undefined" target="_blank" class="socials"><i class="fab fa-twitter"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.dribbble.com/undefined" target="_blank" class="socials"><i class="fab fa-dribbble"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.linkedin.com/in/undefined/" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.medium.com/@undefined/" target="_blank" class="socials"><i class="fab fa-medium-m"></i></a></span>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="#top" aria-label="Daud Mabena, back to top">
+          <span class="brand__mark" aria-hidden="true">DM</span>
+          <span class="brand__name">Daud Mabena</span>
+        </a>
+
+        <nav class="nav" aria-label="Sections">
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-list"
+          >
+            <span class="nav__toggle-bars" aria-hidden="true"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+
+          <ul class="nav__list" id="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#build">What I build</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-live="polite">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" />
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" />
+          </svg>
+          <span class="sr-only">Toggle colour theme</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <span id="top"></span>
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrap hero__inner">
+          <div class="hero__text">
+            <p class="eyebrow">
+              <span class="pulse" aria-hidden="true"></span>
+              Software Developer &middot; Dar es Salaam, Tanzania
+            </p>
+
+            <h1 class="hero__title">
+              I build enterprise systems,
+              <span class="grad">APIs</span>, and the integrations between them.
+            </h1>
+
+            <p class="lead">
+              Backend-focused developer working in Laravel and PHP, with React and
+              TypeScript on the front end and Flutter on mobile. Most of my work
+              involves enterprise systems, REST APIs, and financial and payment
+              workflows.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#work">
+                View work
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn" href="#contact">Get in touch</a>
+              <a
+                class="btn btn--ghost"
+                href="https://github.com/daudmabena"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <aside class="spec" aria-label="Profile summary">
+            <div class="spec__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <img
+              class="spec__avatar"
+              src="https://github.com/daudmabena.png?size=160"
+              width="80"
+              height="80"
+              alt="Daud Mabena"
+              loading="lazy"
+            />
+            <dl class="spec__list">
+              <div><dt>Role</dt><dd>Software Developer</dd></div>
+              <div><dt>Focus</dt><dd>Backend &amp; systems integration</dd></div>
+              <div><dt>Backend</dt><dd>Laravel, PHP, Yii2</dd></div>
+              <div><dt>Frontend</dt><dd>React, TypeScript, Tailwind</dd></div>
+              <div><dt>Mobile</dt><dd>Flutter</dd></div>
+              <div><dt>Database</dt><dd>Oracle, relational SQL</dd></div>
+              <div><dt>Location</dt><dd>Dar es Salaam, Tanzania</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <h2 class="section__title"><span class="section__num">01</span> About</h2>
+          <div class="prose">
+            <p>
+              I am a software developer based in Dar es Salaam, Tanzania. I work on
+              large enterprise systems, where most of my time goes into backend
+              services, REST APIs, and integrations between systems that were not
+              originally designed to talk to each other — including financial and
+              payment workflows.
+            </p>
+            <p>
+              On the backend I work primarily with PHP, using Laravel and Yii2,
+              backed by Oracle and other relational databases. On the front end I
+              build interfaces with React, TypeScript, Vite, and Tailwind CSS. For
+              mobile I use Flutter. I also handle the deployment side of the work:
+              Linux servers, Nginx and Apache, Git workflows, and CI/CD pipelines.
+            </p>
+            <p>
+              I care about systems that are still maintainable after they ship —
+              clear data models, documented APIs, predictable deployments, and code
+              that the next developer can read.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I build -->
+      <section class="section section--alt" id="build">
+        <div class="wrap">
+          <h2 class="section__title">
+            <span class="section__num">02</span> What I build
+          </h2>
+
+          <ul class="cards">
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18M8 20V9" />
+              </svg>
+              <h3>Enterprise applications</h3>
+              <p>
+                Multi-user business systems with role-based access, audit trails,
+                and reporting.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10h18M6 15h4" />
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+              </svg>
+              <h3>Financial &amp; payment systems</h3>
+              <p>
+                Payment and transaction workflows, reconciliation, and validation
+                rules.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 4 4 12l4 8M16 4l4 8-4 8M13 4l-2 16" />
+              </svg>
+              <h3>REST APIs</h3>
+              <p>
+                Versioned HTTP APIs with authentication, validation, and documented
+                contracts.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="6" cy="6" r="2.5" />
+                <circle cx="18" cy="18" r="2.5" />
+                <path d="M6 8.5V15a3 3 0 0 0 3 3h6.5" />
+              </svg>
+              <h3>System integrations</h3>
+              <p>
+                Connecting internal systems and third-party services, with data
+                mapping and error handling.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2.5" y="5" width="19" height="13" rx="2" />
+                <path d="M9 21h6M12 18v3" />
+              </svg>
+              <h3>Web applications</h3>
+              <p>
+                React and TypeScript front ends on Laravel or Yii2 back ends.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+                <path d="M11 19h2" />
+              </svg>
+              <h3>Mobile applications</h3>
+              <p>Cross-platform Android and iOS apps built with Flutter.</p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19V9M9.5 19V4M15 19v-7M20.5 19v-4" />
+              </svg>
+              <h3>Dashboards &amp; management systems</h3>
+              <p>
+                Operational dashboards, admin panels, and internal tooling for
+                data-heavy workflows.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 4 7v6c0 4 3.4 6.9 8 8 4.6-1.1 8-4 8-8V7l-8-4Z" />
+                <path d="M9.5 12.5l1.8 1.8 3.4-3.6" />
+              </svg>
+              <h3>Linux &amp; server administration</h3>
+              <p>
+                Provisioning and maintaining Linux servers, Nginx and Apache, TLS,
+                and deployments.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="section" id="stack">
+        <div class="wrap">
+          <h2 class="section__title">
+            <span class="section__num">03</span> Technology stack
+          </h2>
+
+          <div class="stack">
+            <div class="stack__group">
+              <h3>Languages</h3>
+              <ul class="chips">
+                <li>PHP</li><li>TypeScript</li><li>JavaScript</li><li>Dart</li>
+                <li>SQL</li><li>HTML</li><li>CSS</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>Frontend</h3>
+              <ul class="chips">
+                <li>React</li><li>Vite</li><li>TypeScript</li><li>Tailwind CSS</li>
+                <li>Zustand</li><li>Headless UI</li><li>Lucide React</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>Backend</h3>
+              <ul class="chips">
+                <li>Laravel</li><li>Yii2</li><li>PHP</li><li>REST APIs</li>
+                <li>Composer</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>Mobile</h3>
+              <ul class="chips"><li>Flutter</li></ul>
+            </div>
+            <div class="stack__group">
+              <h3>Databases</h3>
+              <ul class="chips">
+                <li>Oracle Database</li><li>Relational design</li><li>SQL</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>DevOps &amp; infrastructure</h3>
+              <ul class="chips">
+                <li>Linux</li><li>Nginx</li><li>Apache</li><li>CI/CD</li>
+                <li>Server administration</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>Tools</h3>
+              <ul class="chips">
+                <li>Git</li><li>GitHub</li><li>GitLab</li><li>Composer</li><li>npm</li>
+              </ul>
+            </div>
+            <div class="stack__group">
+              <h3>APIs &amp; integrations</h3>
+              <ul class="chips">
+                <li>REST</li><li>Third-party services</li><li>Payment workflows</li>
+                <li>Webhooks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section class="section section--alt" id="work">
+        <div class="wrap">
+          <h2 class="section__title">
+            <span class="section__num">04</span> Selected work
+          </h2>
+          <p class="section__note">
+            Descriptions and topics come straight from each repository on GitHub.
+          </p>
+
+          <!--
+            Generated by tools/update_site.py. Do not edit between the markers by
+            hand; the next run will overwrite it. Which projects appear here is set
+            by "featured" in tools/site.config.json.
+          -->
+          <!-- FEATURED:START -->
+          <ul class="featured">
+            <li class="project">
+              <div>
+                <div class="project__head">
+                  <h3 class="project__name">
+                    <a href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Vendite-Maestria</a>
+                  </h3>
                 </div>
+                <p class="project__desc">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</p>
+              <ul class="project__topics"><li>domain-driven-design</li><li>ecommerce</li><li>laravel</li><li>modular-monolith</li><li>php</li></ul>
+              </div>
+              <div class="project__side">
+                <ul class="repo__meta">
+                <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+                  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                </ul>
+                <div class="project__links">
+                  <a class="btn" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Code</a>
                 </div>
-    </div>
-    <div id="display">
-      <div id="work">
-        <h1>Work.</h1>
-        <div class="projects" id="work_section">
-                        <a href="https://github.com/daudmabena/daudmabena.github.io" target="_blank">
-                        <section>
-                            <div class="section_title">daudmabena.github.io</div>
-                            <div class="about_section">
-                            <span style="display:block;">Portfolio for Daud Mabena</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/bismuth-cms" target="_blank">
-                        <section>
-                            <div class="section_title">bismuth-cms</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TypeScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/Vendite-Maestria" target="_blank">
-                        <section>
-                            <div class="section_title">Vendite-Maestria</div>
-                            <div class="about_section">
-                            <span style="display:block;">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/my_flask_api" target="_blank">
-                        <section>
-                            <div class="section_title">my_flask_api</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/legal-content-writer" target="_blank">
-                        <section>
-                            <div class="section_title">legal-content-writer</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/task-manager" target="_blank">
-                        <section>
-                            <div class="section_title">task-manager</div>
-                            <div class="about_section">
-                            <span style="display:block;">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TypeScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 1</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/curl_post" target="_blank">
-                        <section>
-                            <div class="section_title">curl_post</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TypeScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/snake-game" target="_blank">
-                        <section>
-                            <div class="section_title">snake-game</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/olas-admin" target="_blank">
-                        <section>
-                            <div class="section_title">olas-admin</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TypeScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/gptprompthub" target="_blank">
-                        <section>
-                            <div class="section_title">gptprompthub</div>
-                            <div class="about_section">
-                            <span style="display:block;">https://gptprompthub.online</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/greeting.today" target="_blank">
-                        <section>
-                            <div class="section_title">greeting.today</div>
-                            <div class="about_section">
-                            <span style="display:block;">Created with StackBlitz ⚡️</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; CSS</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/hortempire" target="_blank">
-                        <section>
-                            <div class="section_title">hortempire</div>
-                            <div class="about_section">
-                            <span style="display:block;">Gatsby starter for creating a blog</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/bismuth-erd" target="_blank">
-                        <section>
-                            <div class="section_title">bismuth-erd</div>
-                            <div class="about_section">
-                            <span style="display:block;">bismuth-erd</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/noasis-training" target="_blank">
-                        <section>
-                            <div class="section_title">noasis-training</div>
-                            <div class="about_section">
-                            <span style="display:block;">NOASIS Training Application</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TypeScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/yii2-bs4-advanced" target="_blank">
-                        <section>
-                            <div class="section_title">yii2-bs4-advanced</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/yii2-bs4-basic" target="_blank">
-                        <section>
-                            <div class="section_title">yii2-bs4-basic</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/realkids" target="_blank">
-                        <section>
-                            <div class="section_title">realkids</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/lms" target="_blank">
-                        <section>
-                            <div class="section_title">lms</div>
-                            <div class="about_section">
-                            <span style="display:block;">Learning Management System (LMS)</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/fadhatech" target="_blank">
-                        <section>
-                            <div class="section_title">fadhatech</div>
-                            <div class="about_section">
-                            <span style="display:block;">GitHub Pages</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/YoutubeVideoDetails" target="_blank">
-                        <section>
-                            <div class="section_title">YoutubeVideoDetails</div>
-                            <div class="about_section">
-                            <span style="display:block;">Fetch Youtube video details using the class</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 1</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/jQuery-Table-Tabs" target="_blank">
-                        <section>
-                            <div class="section_title">jQuery-Table-Tabs</div>
-                            <div class="about_section">
-                            <span style="display:block;">Simple tabs for tables</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 1</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/DataTable" target="_blank">
-                        <section>
-                            <div class="section_title">DataTable</div>
-                            <div class="about_section">
-                            <span style="display:block;">JQuery Data Table</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/UserAuthenticationClass" target="_blank">
-                        <section>
-                            <div class="section_title">UserAuthenticationClass</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/gethashtag" target="_blank">
-                        <section>
-                            <div class="section_title">gethashtag</div>
-                            <div class="about_section">
-                            <span style="display:block;">Get hash tag from long paragraph</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/passwordHasher" target="_blank">
-                        <section>
-                            <div class="section_title">passwordHasher</div>
-                            <div class="about_section">
-                            <span style="display:block;">Hashes a password</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/vStandard" target="_blank">
-                        <section>
-                            <div class="section_title">vStandard</div>
-                            <div class="about_section">
-                            <span style="display:block;">Standard WordPress Template</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/facebook-timeline-posts" target="_blank">
-                        <section>
-                            <div class="section_title">facebook-timeline-posts</div>
-                            <div class="about_section">
-                            <span style="display:block;">A PHP class which accesses a Facebook page and returns the statuses nicely formatted</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/daudmabena/PHP-Form-Validation" target="_blank">
-                        <section>
-                            <div class="section_title">PHP-Form-Validation</div>
-                            <div class="about_section">
-                            <span style="display:block;">PHP HTML Form validation</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a></div>
-      </div>
-      <div id="forks" style="display:none;">
-        <h1>Forks.</h1>
-        <div class="projects" id="forks_section"></div>
-      </div>
-      <div id="blog_section">
-        <h1>Blog.</h1>
-        <div id="blogs"></div>
-      </div>
-      <div id="footer">
-        <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
-      </div>
-    </div>
-    <script type="text/javascript">
-      setTimeout(function() {
-        document.getElementById("loading").classList.add("animated");
-        document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
-        }, 800);
-      }, 1500);
-      $.getJSON("blog.json", function(blog) {
-        blog = blog || [];
-        if (blog.length == 0) {
-          return (document.getElementById("blog_section").style.display =
-            "none");
-        }
-        for (var i = 0; i < blog.length; i++) {
-          $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section>
-                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
-                    <div class="blog_container">
-                        <div class="section_title">${blog[i].title}</div>
-                        <div class="about_section">
-                            ${blog[i].sub_title}
-                        </div>
-                    </div>
-                </section>
-            </a>
-            `);
-        }
-      }).fail(function() {
-        return (document.getElementById("blog_section").style.display = "none");
-      });
-    </script>
+              </div>
+            </li>
+            <li class="project">
+              <div>
+                <div class="project__head">
+                  <h3 class="project__name">
+                    <a href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">task-manager</a>
+                  </h3>
+                </div>
+                <p class="project__desc">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</p>
+              <ul class="project__topics"><li>dark-mode</li><li>inertiajs</li><li>laravel</li><li>spatie</li><li>tailwind</li><li>task-management</li></ul>
+              </div>
+              <div class="project__side">
+                <ul class="repo__meta">
+                <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                </ul>
+                <div class="project__links">
+                  <a class="btn" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- FEATURED:END -->
+        </div>
+      </section>
 
-    <script>
-      const magicProjectsGrid = new MagicGrid({
-        container: "#work_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+      <!-- All repositories -->
+      <section class="section" id="repositories">
+        <div class="wrap">
+          <h2 class="section__title">
+            <span class="section__num">05</span> Public repositories
+          </h2>
+          <p class="section__note">
+            Refreshed weekly from the GitHub API. Forks are not listed.
+          </p>
 
-      const magicForksGrid = new MagicGrid({
-        container: "#forks_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+          <!-- Generated by tools/update_site.py. Do not edit by hand. -->
+          <!-- REPOS:START -->
+        <div class="repos">
+          <a class="repo" href="https://github.com/daudmabena/daudmabena.github.io" target="_blank" rel="noopener">
+            <h3 class="repo__name">daudmabena.github.io</h3>
+            <p class="repo__desc">Portfolio for Daud Mabena</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="HTML"><span class="dot"></span>HTML</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/bismuth-cms" target="_blank" rel="noopener">
+            <h3 class="repo__name">bismuth-cms</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">
+            <h3 class="repo__name">Vendite-Maestria</h3>
+            <p class="repo__desc">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/my_flask_api" target="_blank" rel="noopener">
+            <h3 class="repo__name">my_flask_api</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="Python"><span class="dot"></span>Python</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/legal-content-writer" target="_blank" rel="noopener">
+            <h3 class="repo__name">legal-content-writer</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">
+            <h3 class="repo__name">task-manager</h3>
+            <p class="repo__desc">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/curl_post" target="_blank" rel="noopener">
+            <h3 class="repo__name">curl_post</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/snake-game" target="_blank" rel="noopener">
+            <h3 class="repo__name">snake-game</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="HTML"><span class="dot"></span>HTML</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/olas-admin" target="_blank" rel="noopener">
+            <h3 class="repo__name">olas-admin</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/gptprompthub" target="_blank" rel="noopener">
+            <h3 class="repo__name">gptprompthub</h3>
+            <p class="repo__desc">https://gptprompthub.online</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/noasis-training" target="_blank" rel="noopener">
+            <h3 class="repo__name">noasis-training</h3>
+            <p class="repo__desc">NOASIS Training Application</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/yii2-bs4-advanced" target="_blank" rel="noopener">
+            <h3 class="repo__name">yii2-bs4-advanced</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/yii2-bs4-basic" target="_blank" rel="noopener">
+            <h3 class="repo__name">yii2-bs4-basic</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/realkids" target="_blank" rel="noopener">
+            <h3 class="repo__name">realkids</h3>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/lms" target="_blank" rel="noopener">
+            <h3 class="repo__name">lms</h3>
+            <p class="repo__desc">Learning Management System (LMS)</p>
+            <ul class="repo__meta">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/fadhatech" target="_blank" rel="noopener">
+            <h3 class="repo__name">fadhatech</h3>
+            <p class="repo__desc">GitHub Pages</p>
+            <ul class="repo__meta">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/YoutubeVideoDetails" target="_blank" rel="noopener">
+            <h3 class="repo__name">YoutubeVideoDetails</h3>
+            <p class="repo__desc">Fetch Youtube video details using the class</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/jQuery-Table-Tabs" target="_blank" rel="noopener">
+            <h3 class="repo__name">jQuery-Table-Tabs</h3>
+            <p class="repo__desc">Simple tabs for tables</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/DataTable" target="_blank" rel="noopener">
+            <h3 class="repo__name">DataTable</h3>
+            <p class="repo__desc">JQuery Data Table</p>
+            <ul class="repo__meta">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/UserAuthenticationClass" target="_blank" rel="noopener">
+            <h3 class="repo__name">UserAuthenticationClass</h3>
+            <ul class="repo__meta">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/gethashtag" target="_blank" rel="noopener">
+            <h3 class="repo__name">gethashtag</h3>
+            <p class="repo__desc">Get hash tag from long paragraph</p>
+            <ul class="repo__meta">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/passwordHasher" target="_blank" rel="noopener">
+            <h3 class="repo__name">passwordHasher</h3>
+            <p class="repo__desc">Hashes a password</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/vStandard" target="_blank" rel="noopener">
+            <h3 class="repo__name">vStandard</h3>
+            <p class="repo__desc">Standard WordPress Template</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/facebook-timeline-posts" target="_blank" rel="noopener">
+            <h3 class="repo__name">facebook-timeline-posts</h3>
+            <p class="repo__desc">A PHP class which accesses a Facebook page and returns the statuses nicely formatted</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+          <a class="repo" href="https://github.com/daudmabena/PHP-Form-Validation" target="_blank" rel="noopener">
+            <h3 class="repo__name">PHP-Form-Validation</h3>
+            <p class="repo__desc">PHP HTML Form validation</p>
+            <ul class="repo__meta">
+              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+            </ul>
+          </a>
+        </div>
+          <!-- REPOS:END -->
+        </div>
+      </section>
 
-      $("document").ready(() => {
-        magicProjectsGrid.listen();
-        magicForksGrid.listen();
-      });
-    </script>
-  
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="contact">
+            <h2>Open to backend, API, and integration work</h2>
+            <p>
+              If you are building something that needs a considered back end or has
+              to talk reliably to other systems, I would be glad to hear about it.
+            </p>
 
-</body></html>
+            <div class="contact__links">
+              <a
+                class="btn btn--primary"
+                href="https://github.com/daudmabena"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+              <a
+                class="btn"
+                href="https://x.com/daudmabena"
+                target="_blank"
+                rel="noopener"
+                >X / Twitter</a
+              >
+              <a
+                class="btn"
+                href="https://dev.page/daud"
+                target="_blank"
+                rel="noopener"
+                >dev.page</a
+              >
+
+              <!--
+                TO ADD: an email address and LinkedIn. Both are deliberately left
+                out rather than filled with a placeholder, so nothing fake ships.
+                Uncomment and fill in:
+
+                <a class="btn" href="mailto:you@example.com">Email</a>
+                <a class="btn" href="https://www.linkedin.com/in/your-handle/"
+                   target="_blank" rel="noopener">LinkedIn</a>
+              -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p>&copy; <span id="year">2026</span> Daud Mabena</p>
+        <p class="site-footer__meta">
+          Built as a static site with no framework or build step.
+          <a href="https://github.com/daudmabena/daudmabena.github.io" target="_blank" rel="noopener">Source</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

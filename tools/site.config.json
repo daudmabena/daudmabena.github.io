@@ -6,9 +6,16 @@
 
   "include_forks": false,
 
-  "extra": [
-    "FADHATECHNOLOGY/comas"
+  "_featured_note": "Projects shown in the 'Selected work' section, in this order. Their description and topics are read straight from GitHub, so a repository with no description on GitHub is skipped rather than published with placeholder text. Adding more is the single best improvement you can make to this page: write a description and add topics on GitHub, then list the repository here.",
+
+  "featured": [
+    "Vendite-Maestria",
+    "task-manager"
   ],
+
+  "_extra_note": "Repositories outside your own account, such as organisation ones, given as owner/name. FADHATECHNOLOGY/comas used to be listed here but is no longer publicly available, so it was removed.",
+
+  "extra": [],
 
   "_exclude_note": "Repositories left off the site, each with the reason. This is a starting point, not a verdict: add or remove entries freely. Anything excluded here is still public on GitHub, it is just not featured on the portfolio. To hide a repository from your GitHub profile as well, archive it.",
 
@@ -39,6 +46,9 @@
     "Woordpress-Snippets": "snippet collection, and the name misspells WordPress",
     "application": "placeholder name, unclear purpose",
     "dudee": "scratch repository",
-    "sketches": "scratch experiments"
+    "sketches": "scratch experiments",
+    "greeting.today": "its own description reads 'Created with StackBlitz'",
+    "hortempire": "its own description reads 'Gatsby starter for creating a blog'",
+    "bismuth-erd": "empty repository, 0 KB"
   }
 }
