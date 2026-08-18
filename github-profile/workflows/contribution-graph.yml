@@ -1,0 +1,61 @@
+# Renders your public contribution calendar as an animated SVG for the
+# "Contribution Activity" section of the profile README.
+#
+# The generated files are force-pushed to a separate "output" branch so that
+# the main branch history stays clean and free of daily generated-asset commits.
+# The README loads them from raw.githubusercontent.com on that branch.
+#
+# Install at: .github/workflows/contribution-graph.yml in the daudmabena/daudmabena repository.
+
+name: Update contribution graph
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # daily at 03:30 UTC, after the stats cards
+  push:
+    paths:
+      - ".github/workflows/contribution-graph.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: contribution-graph
+  cancel-in-progress: false
+
+jobs:
+  graph:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # svg-only is the faster variant; it skips GIF rendering, which needs a
+      # headless browser.
+      - name: Generate contribution graph
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/github-snake.svg?palette=github-light
+            dist/github-snake-dark.svg?palette=github-dark
+
+      # The generator runs in a container as root, so the files it writes are
+      # root-owned and the later git steps cannot touch them.
+      - name: Take ownership of generated files
+        run: sudo chown -R "$(id -u):$(id -g)" dist
+
+      - name: Publish to the output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b output
+          git add .
+          git commit -q -m "chore: update contribution graph"
+          # Force push is intentional: this branch only ever holds the latest
+          # generated images, so there is no history worth keeping.
+          git push -q --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output

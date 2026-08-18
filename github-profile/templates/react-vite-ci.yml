@@ -1,0 +1,45 @@
+# Continuous integration for a React + TypeScript + Vite project.
+#
+# Install at .github/workflows/ci.yml in the project repository, then add the
+# badge to the README:
+#   [![CI](https://github.com/daudmabena/<repo>/actions/workflows/ci.yml/badge.svg)](https://github.com/daudmabena/<repo>/actions/workflows/ci.yml)
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      # `npm ci` requires a committed package-lock.json. Commit the lock file:
+      # without it, builds are not reproducible.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        # Catches type errors that `vite build` alone may not surface.
+        # Add to package.json if missing: "typecheck": "tsc --noEmit"
+        run: npm run typecheck
+
+      - name: Test
+        # Delete this step until tests exist, rather than letting it fail.
+        # With Vitest, add: "test": "vitest run"
+        run: npm test
+
+      - name: Build
+        run: npm run build

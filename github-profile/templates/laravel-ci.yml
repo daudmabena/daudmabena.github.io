@@ -1,0 +1,75 @@
+# Continuous integration for a Laravel project.
+#
+# Install at .github/workflows/ci.yml in the project repository, then add the
+# badge to the README:
+#   [![CI](https://github.com/daudmabena/<repo>/actions/workflows/ci.yml/badge.svg)](https://github.com/daudmabena/<repo>/actions/workflows/ci.yml)
+#
+# Deliberately minimal: install, check style, run tests. Get this green first and
+# add steps later. A workflow that is red for weeks is worse than no workflow.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          # Match the version you run in production. Use a matrix if you support
+          # more than one.
+          php-version: "8.3"
+          extensions: mbstring, pdo, pdo_sqlite, bcmath, intl
+          coverage: none
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/composer/files
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Check code style
+        # Remove this step if the project does not use Pint yet. Better still,
+        # run `./vendor/bin/pint` once locally, commit the result, then keep it.
+        run: ./vendor/bin/pint --test
+
+      - name: Run tests
+        # Tests run against an in-memory SQLite database so CI needs no database
+        # service. If the project depends on Oracle-specific SQL, replace this
+        # with a service container or mark those tests to be skipped in CI.
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
+        run: php artisan test
+
+  frontend:
+    # Delete this whole job if the project has no compiled frontend assets.
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build

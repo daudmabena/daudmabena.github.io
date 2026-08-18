@@ -1,0 +1,63 @@
+# Generates the GitHub statistics cards used by the profile README.
+#
+# Why a workflow instead of a hosted image URL:
+# the widely copied https://github-readme-stats.vercel.app/... endpoint is a
+# single free instance shared by a very large number of profiles. It is
+# repeatedly rate limited and has been paused outright, which turns the images
+# on your profile into broken placeholders. The project maintainers now
+# recommend this action instead. It renders the same cards during the workflow
+# run and commits them as static SVG files, so your profile only depends on
+# GitHub itself.
+#
+# Install at: .github/workflows/profile-cards.yml in the daudmabena/daudmabena repository.
+
+name: Update profile cards
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily at 03:00 UTC
+  push:
+    paths:
+      - ".github/workflows/profile-cards.yml"
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+
+# Keeps a slow scheduled run from piling up behind a manual one.
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate statistics card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_rank=true&hide_border=true&hide_title=true&card_width=450
+          path: profile/stats.svg
+          # GITHUB_TOKEN is enough for public data. A personal access token is
+          # only needed to count private contributions, which means handing a
+          # long-lived credential to a workflow; not worth it for a nicer number.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=8&hide_border=true&card_width=450
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "chore: update profile cards" || exit 0
+          git push
