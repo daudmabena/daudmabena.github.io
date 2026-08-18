@@ -21,10 +21,14 @@
       property="og:description"
       content="Enterprise web systems, REST APIs, and integrations. Laravel, React, and Flutter. Based in Dar es Salaam, Tanzania."
     />
+    <!-- Switch to https://daudmabena.github.io/assets/img/avatar.jpg once that
+         file is committed. It must stay an absolute URL: social networks fetch it
+         from outside the site. -->
     <meta property="og:image" content="https://github.com/daudmabena.png?size=460" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@daudmabena" />
 
+    <!-- Switch to assets/img/avatar.jpg once committed; a favicon has no fallback. -->
     <link rel="icon" href="https://github.com/daudmabena.png?size=64" type="image/png" />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
@@ -119,13 +123,18 @@
             <div class="spec__bar" aria-hidden="true">
               <span></span><span></span><span></span>
             </div>
+            <!--
+              Uses assets/img/avatar.jpg once that file exists, and falls back to
+              the GitHub avatar until then, so the page is never left with a
+              broken image. See assets/img/README.md.
+            -->
             <img
               class="spec__avatar"
-              src="https://github.com/daudmabena.png?size=160"
+              src="assets/img/avatar.jpg"
+              onerror="this.onerror=null;this.src='https://github.com/daudmabena.png?size=160';"
               width="80"
               height="80"
               alt="Daud Mabena"
-              loading="lazy"
             />
             <dl class="spec__list">
               <div><dt>Role</dt><dd>Software Developer</dd></div>
