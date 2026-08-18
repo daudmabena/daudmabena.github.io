@@ -18,6 +18,7 @@ on:
   push:
     paths:
       - "tools/update_site.py"
+      - "tools/check_site.py"
       - "tools/site.config.json"
       - ".github/workflows/update-site.yml"
   workflow_dispatch:
@@ -43,6 +44,9 @@ jobs:
           # public data is read, so the automatic token is sufficient.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 tools/update_site.py
+
+      - name: Validate site structure
+        run: python3 tools/check_site.py
 
       - name: Commit if the card list changed
         run: |

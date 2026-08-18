@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="paper">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,9 +10,9 @@
       content="Daud Mabena is a software developer in Dar es Salaam, Tanzania, building enterprise web systems, REST APIs, and integrations with Laravel, React, and Flutter."
     />
     <link rel="canonical" href="https://daudmabena.github.io/" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8f5f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://daudmabena.github.io/" />
@@ -30,17 +30,27 @@
 
     <!-- Switch to assets/img/avatar.jpg once committed; a favicon has no fallback. -->
     <link rel="icon" href="https://github.com/daudmabena.png?size=64" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
 
-  <body>
+  <body class="ink-sheet">
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <p class="inscription vertical-text" aria-hidden="true">意先笔后 · 气韵生动</p>
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="brand" href="#top" aria-label="Daud Mabena, back to top">
-          <span class="brand__mark" aria-hidden="true">DM</span>
+        <a class="brand" href="#top">
+          <span class="brand__mark font-seal" aria-hidden="true">墨</span>
           <span class="brand__name">Daud Mabena</span>
+          <span class="brand__sub" aria-hidden="true">水墨 · 2026</span>
         </a>
 
         <nav class="nav" aria-label="Sections">
@@ -55,23 +65,26 @@
           </button>
 
           <ul class="nav__list" id="nav-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#build">What I build</a></li>
+            <li><a href="#profile">Profile</a></li>
             <li><a href="#stack">Stack</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#index">Index</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
 
-        <button class="theme-toggle" type="button" aria-live="polite">
+        <button class="theme-toggle" type="button">
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="4.5" />
-            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" />
+            <path
+              d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"
+            />
           </svg>
           <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" />
           </svg>
-          <span class="sr-only">Toggle colour theme</span>
+          <span class="sr-only">Toggle paper and ink theme</span>
         </button>
       </div>
     </header>
@@ -79,596 +92,1337 @@
     <main id="main">
       <span id="top"></span>
 
-      <!-- Hero -->
+      <!-- ================= HERO / INK TITLE BLOCK ====================== -->
       <section class="hero">
-        <div class="wrap hero__inner">
-          <div class="hero__text">
-            <p class="eyebrow">
-              <span class="pulse" aria-hidden="true"></span>
-              Software Developer &middot; Dar es Salaam, Tanzania
-            </p>
+        <div class="wrap">
+          <div class="hero__sheet ink-frame">
+            <span class="corner-gold corner-gold--tl" aria-hidden="true"></span>
+            <span class="splash splash--1" aria-hidden="true"></span>
+            <span class="splash splash--2" aria-hidden="true"></span>
+            <div class="mountains" aria-hidden="true"></div>
 
-            <h1 class="hero__title">
-              I build enterprise systems,
-              <span class="grad">APIs</span>, and the integrations between them.
-            </h1>
+            <div class="hero__meta-top">
+              <span class="ref">卷一 · Sheet 01</span>
+              <span class="ref">Rev: 2026.08</span>
+              <span class="ref">Dar es Salaam, Tanzania</span>
+              <span class="seal seal--round seal--lg font-seal" aria-hidden="true">印</span>
+            </div>
 
-            <p class="lead">
-              Backend-focused developer working in Laravel and PHP, with React and
-              TypeScript on the front end and Flutter on mobile. Most of my work
-              involves enterprise systems, REST APIs, and financial and payment
-              workflows.
-            </p>
+            <div class="hero__grid">
+              <div>
+                <p class="hero__eyebrow">
+                  <span class="seal font-seal" aria-hidden="true">墨</span>
+                  <span class="label font-calligraphy-行">软件工程 · Software Developer</span>
+                </p>
 
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="#work">
-                View work
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon">
-                  <path d="M5 12h13M13 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a class="btn" href="#contact">Get in touch</a>
-              <a
-                class="btn btn--ghost"
-                href="https://github.com/daudmabena"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </a>
+                <h1 class="hero__name font-calligraphy-草">Daud Mabena</h1>
+                <p class="hero__role font-calligraphy-行">Software Developer</p>
+
+                <ul class="hero__disciplines">
+                  <li>Systems</li>
+                  <li>Applications</li>
+                  <li>Integrations</li>
+                </ul>
+
+                <p class="hero__desc">
+                  I build enterprise web systems and the REST APIs and integrations
+                  that connect them, working in Laravel and PHP on the back end,
+                  React and TypeScript on the front, and Flutter on mobile. Much of
+                  my work involves financial and payment workflows, where
+                  correctness and traceability matter more than speed of delivery.
+                </p>
+
+                <div class="hero__actions">
+                  <a class="btn btn--primary" href="#work">
+                    Selected work
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 12h15M13 6l6 6-6 6" />
+                    </svg>
+                  </a>
+                  <a class="btn" href="#architecture">Architecture</a>
+                  <a
+                    class="btn"
+                    href="https://github.com/daudmabena"
+                    target="_blank"
+                    rel="noopener"
+                    >Repository</a
+                  >
+                </div>
+
+                <p class="dim hero__dim" aria-hidden="true">
+                  <span class="dim__value">Full stack &mdash; client to database</span>
+                </p>
+              </div>
+
+              <!-- Metadata specification, right-hand column -->
+              <aside class="metaspec" aria-label="Profile metadata">
+                <!--
+                  Uses assets/img/avatar.jpg once that file exists, and falls back
+                  to the GitHub avatar until then, so the page is never left with a
+                  broken image. See assets/img/README.md.
+                -->
+                <img
+                  class="metaspec__avatar"
+                  src="assets/img/avatar.jpg"
+                  onerror="this.onerror=null;this.src='https://github.com/daudmabena.png?size=460';"
+                  width="460"
+                  height="460"
+                  alt="Daud Mabena"
+                />
+                <div class="metaspec__head">
+                  <span class="seal font-seal" aria-hidden="true">印</span>
+                  <span class="label font-calligraphy-行">Profile</span>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Location</dt>
+                    <dd>Dar es Salaam, Tanzania</dd>
+                  </div>
+                  <div>
+                    <dt>Specialization</dt>
+                    <dd>Software engineering</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd><span class="status-live">Available for work</span></dd>
+                  </div>
+                  <div>
+                    <dt>Primary stack</dt>
+                    <dd>Laravel / React / Flutter</dd>
+                  </div>
+                  <div>
+                    <dt>Database</dt>
+                    <dd>Oracle / relational SQL</dd>
+                  </div>
+                </dl>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 01  SYSTEM PROFILE ========================== -->
+      <section class="section" id="profile">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="section__no">01</span>
+            <h2 class="section__title">System profile</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">SPEC-001</span>
+          </div>
+          <p class="section__note">
+            Professional specification. Every field below describes work I do in
+            practice rather than a target.
+          </p>
+
+          <div class="spec-grid">
+            <div class="spec-field">
+              <p class="spec-field__label">
+                <span class="crosshair" aria-hidden="true"></span>
+                <span class="label">Role</span>
+              </p>
+              <p class="spec-field__value">Software Developer</p>
+            </div>
+
+            <div class="spec-field">
+              <p class="spec-field__label">
+                <span class="crosshair" aria-hidden="true"></span>
+                <span class="label">Primary discipline</span>
+              </p>
+              <p class="spec-field__value">Full-stack software engineering</p>
+            </div>
+
+            <div class="spec-field">
+              <p class="spec-field__label">
+                <span class="crosshair" aria-hidden="true"></span>
+                <span class="label">Specialization</span>
+              </p>
+              <ul>
+                <li>Enterprise applications</li>
+                <li>Financial systems</li>
+                <li>Payment integrations</li>
+                <li>API development</li>
+                <li>Database systems</li>
+              </ul>
+            </div>
+
+            <div class="spec-field">
+              <p class="spec-field__label">
+                <span class="crosshair" aria-hidden="true"></span>
+                <span class="label">Operating environment</span>
+              </p>
+              <ul>
+                <li>Linux servers</li>
+                <li>Nginx / Apache</li>
+                <li>Git-based delivery</li>
+                <li>CI/CD pipelines</li>
+              </ul>
             </div>
           </div>
 
-          <aside class="spec" aria-label="Profile summary">
-            <div class="spec__bar" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <!--
-              Uses assets/img/avatar.jpg once that file exists, and falls back to
-              the GitHub avatar until then, so the page is never left with a
-              broken image. See assets/img/README.md.
-            -->
-            <img
-              class="spec__avatar"
-              src="assets/img/avatar.jpg"
-              onerror="this.onerror=null;this.src='https://github.com/daudmabena.png?size=160';"
-              width="80"
-              height="80"
-              alt="Daud Mabena"
-            />
-            <dl class="spec__list">
-              <div><dt>Role</dt><dd>Software Developer</dd></div>
-              <div><dt>Focus</dt><dd>Backend &amp; systems integration</dd></div>
-              <div><dt>Backend</dt><dd>Laravel, PHP, Yii2</dd></div>
-              <div><dt>Frontend</dt><dd>React, TypeScript, Tailwind</dd></div>
-              <div><dt>Mobile</dt><dd>Flutter</dd></div>
-              <div><dt>Database</dt><dd>Oracle, relational SQL</dd></div>
-              <div><dt>Location</dt><dd>Dar es Salaam, Tanzania</dd></div>
-            </dl>
-          </aside>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section class="section" id="about">
-        <div class="wrap">
-          <h2 class="section__title"><span class="section__num">01</span> About</h2>
-          <div class="prose">
+          <div class="prose" style="margin-top: 2.25rem">
             <p>
-              I am a software developer based in Dar es Salaam, Tanzania. I work on
-              large enterprise systems, where most of my time goes into backend
-              services, REST APIs, and integrations between systems that were not
-              originally designed to talk to each other — including financial and
-              payment workflows.
-            </p>
-            <p>
-              On the backend I work primarily with PHP, using Laravel and Yii2,
-              backed by Oracle and other relational databases. On the front end I
-              build interfaces with React, TypeScript, Vite, and Tailwind CSS. For
-              mobile I use Flutter. I also handle the deployment side of the work:
-              Linux servers, Nginx and Apache, Git workflows, and CI/CD pipelines.
-            </p>
-            <p>
-              I care about systems that are still maintainable after they ship —
-              clear data models, documented APIs, predictable deployments, and code
-              that the next developer can read.
+              I care about systems that are still maintainable after they ship:
+              clear data models, documented API contracts, predictable deployments,
+              and code the next developer can read without a handover meeting.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- What I build -->
-      <section class="section section--alt" id="build">
-        <div class="wrap">
-          <h2 class="section__title">
-            <span class="section__num">02</span> What I build
-          </h2>
-
-          <ul class="cards">
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="4" width="18" height="16" rx="2" />
-                <path d="M3 9h18M8 20V9" />
-              </svg>
-              <h3>Enterprise applications</h3>
-              <p>
-                Multi-user business systems with role-based access, audit trails,
-                and reporting.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 10h18M6 15h4" />
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-              </svg>
-              <h3>Financial &amp; payment systems</h3>
-              <p>
-                Payment and transaction workflows, reconciliation, and validation
-                rules.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 4 4 12l4 8M16 4l4 8-4 8M13 4l-2 16" />
-              </svg>
-              <h3>REST APIs</h3>
-              <p>
-                Versioned HTTP APIs with authentication, validation, and documented
-                contracts.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="6" cy="6" r="2.5" />
-                <circle cx="18" cy="18" r="2.5" />
-                <path d="M6 8.5V15a3 3 0 0 0 3 3h6.5" />
-              </svg>
-              <h3>System integrations</h3>
-              <p>
-                Connecting internal systems and third-party services, with data
-                mapping and error handling.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="2.5" y="5" width="19" height="13" rx="2" />
-                <path d="M9 21h6M12 18v3" />
-              </svg>
-              <h3>Web applications</h3>
-              <p>
-                React and TypeScript front ends on Laravel or Yii2 back ends.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
-                <path d="M11 19h2" />
-              </svg>
-              <h3>Mobile applications</h3>
-              <p>Cross-platform Android and iOS apps built with Flutter.</p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 19V9M9.5 19V4M15 19v-7M20.5 19v-4" />
-              </svg>
-              <h3>Dashboards &amp; management systems</h3>
-              <p>
-                Operational dashboards, admin panels, and internal tooling for
-                data-heavy workflows.
-              </p>
-            </li>
-            <li class="card">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3 4 7v6c0 4 3.4 6.9 8 8 4.6-1.1 8-4 8-8V7l-8-4Z" />
-                <path d="M9.5 12.5l1.8 1.8 3.4-3.6" />
-              </svg>
-              <h3>Linux &amp; server administration</h3>
-              <p>
-                Provisioning and maintaining Linux servers, Nginx and Apache, TLS,
-                and deployments.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Stack -->
+      <!-- ================= 02  TECH STACK ============================== -->
       <section class="section" id="stack">
         <div class="wrap">
-          <h2 class="section__title">
-            <span class="section__num">03</span> Technology stack
-          </h2>
+          <div class="section__head">
+            <span class="section__no">02</span>
+            <h2 class="section__title">Component schedule</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">SPEC-002</span>
+          </div>
+          <p class="section__note">
+            Technology grouped by the layer it operates in. Items marked with a
+            reference reveal where they are used in the projects below &mdash; only
+            where a public repository actually demonstrates it.
+          </p>
 
           <div class="stack">
-            <div class="stack__group">
-              <h3>Languages</h3>
-              <ul class="chips">
-                <li>PHP</li><li>TypeScript</li><li>JavaScript</li><li>Dart</li>
-                <li>SQL</li><li>HTML</li><li>CSS</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>Frontend</h3>
-              <ul class="chips">
-                <li>React</li><li>Vite</li><li>TypeScript</li><li>Tailwind CSS</li>
-                <li>Zustand</li><li>Headless UI</li><li>Lucide React</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>Backend</h3>
-              <ul class="chips">
-                <li>Laravel</li><li>Yii2</li><li>PHP</li><li>REST APIs</li>
-                <li>Composer</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>Mobile</h3>
-              <ul class="chips"><li>Flutter</li></ul>
-            </div>
-            <div class="stack__group">
-              <h3>Databases</h3>
-              <ul class="chips">
-                <li>Oracle Database</li><li>Relational design</li><li>SQL</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>DevOps &amp; infrastructure</h3>
-              <ul class="chips">
-                <li>Linux</li><li>Nginx</li><li>Apache</li><li>CI/CD</li>
-                <li>Server administration</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>Tools</h3>
-              <ul class="chips">
-                <li>Git</li><li>GitHub</li><li>GitLab</li><li>Composer</li><li>npm</li>
-              </ul>
-            </div>
-            <div class="stack__group">
-              <h3>APIs &amp; integrations</h3>
-              <ul class="chips">
-                <li>REST</li><li>Third-party services</li><li>Payment workflows</li>
-                <li>Webhooks</li>
-              </ul>
-            </div>
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">01 / Frontend</span>
+                <span class="panel__ref">CMP-01</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li>
+                    <span class="tech__item" tabindex="0">React</span>
+                    <span class="tech__usage">Used in: task-manager</span>
+                  </li>
+                  <li>
+                    <span class="tech__item" tabindex="0">TypeScript</span>
+                    <span class="tech__usage">Used in: task-manager, bismuth-cms, olas-admin</span>
+                  </li>
+                  <li>
+                    <span class="tech__item" tabindex="0">Vite</span>
+                    <span class="tech__usage">Used in: task-manager</span>
+                  </li>
+                  <li>
+                    <span class="tech__item" tabindex="0">Tailwind CSS</span>
+                    <span class="tech__usage">Used in: task-manager</span>
+                  </li>
+                  <li><span class="tech__item">Zustand</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">02 / Backend</span>
+                <span class="panel__ref">CMP-02</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li>
+                    <span class="tech__item" tabindex="0">Laravel</span>
+                    <span class="tech__usage">Used in: Vendite-Maestria, task-manager</span>
+                  </li>
+                  <li>
+                    <span class="tech__item" tabindex="0">PHP</span>
+                    <span class="tech__usage">Used in: Vendite-Maestria, task-manager</span>
+                  </li>
+                  <li><span class="tech__item">Yii2</span></li>
+                  <li><span class="tech__item">REST APIs</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">03 / Mobile</span>
+                <span class="panel__ref">CMP-03</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li><span class="tech__item">Flutter</span></li>
+                  <li><span class="tech__item">Dart</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">04 / Database</span>
+                <span class="panel__ref">CMP-04</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li><span class="tech__item">Oracle</span></li>
+                  <li><span class="tech__item">SQL</span></li>
+                  <li><span class="tech__item">Relational database systems</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">05 / Infrastructure</span>
+                <span class="panel__ref">CMP-05</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li><span class="tech__item">Linux</span></li>
+                  <li><span class="tech__item">Nginx</span></li>
+                  <li><span class="tech__item">Apache</span></li>
+                  <li><span class="tech__item">Git</span></li>
+                  <li><span class="tech__item">GitHub</span></li>
+                  <li><span class="tech__item">GitLab</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="label">06 / Integrations</span>
+                <span class="panel__ref">CMP-06</span>
+              </header>
+              <div class="panel__body">
+                <ul class="tech">
+                  <li><span class="tech__item">REST APIs</span></li>
+                  <li><span class="tech__item">Payment gateways</span></li>
+                  <li><span class="tech__item">External systems</span></li>
+                  <li><span class="tech__item">Enterprise integrations</span></li>
+                </ul>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Work -->
-      <section class="section section--alt" id="work">
+      <!-- ================= 03  SELECTED WORK =========================== -->
+      <section class="section" id="work">
         <div class="wrap">
-          <h2 class="section__title">
-            <span class="section__num">04</span> Selected work
-          </h2>
+          <div class="section__head">
+            <span class="section__no">03</span>
+            <h2 class="section__title">Project drawings</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">SYS series</span>
+          </div>
           <p class="section__note">
-            Descriptions and topics come straight from each repository on GitHub.
+            Descriptions, topics and architecture rows are taken from each
+            repository's own metadata on GitHub. Nothing here is written for
+            presentation.
           </p>
 
           <!--
             Generated by tools/update_site.py. Do not edit between the markers by
-            hand; the next run will overwrite it. Which projects appear here is set
-            by "featured" in tools/site.config.json.
+            hand; the next run overwrites it. Which projects appear is set by
+            "featured" in tools/site.config.json, and the architecture rows by
+            "architecture" in the same file.
           -->
           <!-- FEATURED:START -->
-          <ul class="featured">
-            <li class="project">
-              <div>
-                <div class="project__head">
-                  <h3 class="project__name">
-                    <a href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Vendite-Maestria</a>
-                  </h3>
+          <div class="projects">
+            <article class="project panel ink-frame">
+              <header class="project__head">
+                <span class="project__id">SYS-001</span>
+                <h3 class="project__name">
+                  <a href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Vendite-Maestria</a>
+                </h3>
+                <span class="project__status" data-status="active">Active</span>
+              </header>
+
+              <div class="project__body">
+                <div class="project__main">
+                  <p class="project__desc">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</p>
+                <ul class="project__topics"><li>domain-driven-design</li><li>ecommerce</li><li>laravel</li><li>modular-monolith</li><li>php</li></ul>
+              <span class="callout">Primary language: PHP</span>
+                  <div class="project__links">
+                    <a class="btn" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Repository</a>
+                  </div>
                 </div>
-                <p class="project__desc">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</p>
-              <ul class="project__topics"><li>domain-driven-design</li><li>ecommerce</li><li>laravel</li><li>modular-monolith</li><li>php</li></ul>
-              </div>
-              <div class="project__side">
-                <ul class="repo__meta">
-                <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-                  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-                </ul>
-                <div class="project__links">
-                  <a class="btn" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">Code</a>
+
+                <div class="project__arch">
+                  <p class="label">Architecture</p>
+                  <div class="arch-stack">
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Backend</p>
+                      <p class="arch-layer__value">Laravel / PHP</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Structure</p>
+                      <p class="arch-layer__value">Modular monolith, Composer packages</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Domains</p>
+                      <p class="arch-layer__value">Catalog, checkout, customer, fulfillment</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Testing</p>
+                      <p class="arch-layer__value">Per-package migrations and tests</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
-            <li class="project">
-              <div>
-                <div class="project__head">
-                  <h3 class="project__name">
-                    <a href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">task-manager</a>
-                  </h3>
+            </article>
+
+            <article class="project panel ink-frame">
+              <header class="project__head">
+                <span class="project__id">SYS-002</span>
+                <h3 class="project__name">
+                  <a href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">task-manager</a>
+                </h3>
+                <span class="project__status" data-status="active">Active</span>
+              </header>
+
+              <div class="project__body">
+                <div class="project__main">
+                  <p class="project__desc">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</p>
+                <ul class="project__topics"><li>dark-mode</li><li>inertiajs</li><li>laravel</li><li>spatie</li><li>tailwind</li><li>task-management</li><li>vite</li></ul>
+              <span class="callout">Primary language: TypeScript</span>
+                  <div class="project__links">
+                    <a class="btn" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">Repository</a>
+                  </div>
                 </div>
-                <p class="project__desc">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</p>
-              <ul class="project__topics"><li>dark-mode</li><li>inertiajs</li><li>laravel</li><li>spatie</li><li>tailwind</li><li>task-management</li></ul>
-              </div>
-              <div class="project__side">
-                <ul class="repo__meta">
-                <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-                  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-                </ul>
-                <div class="project__links">
-                  <a class="btn" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">Code</a>
+
+                <div class="project__arch">
+                  <p class="label">Architecture</p>
+                  <div class="arch-stack">
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Frontend</p>
+                      <p class="arch-layer__value">React / TypeScript</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Bridge</p>
+                      <p class="arch-layer__value">Inertia.js</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Backend</p>
+                      <p class="arch-layer__value">Laravel / PHP</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Access control</p>
+                      <p class="arch-layer__value">Role-based, Spatie</p>
+                    </div>
+                    <span class="arch-join" aria-hidden="true"></span>
+                    <div class="arch-layer">
+                      <p class="arch-layer__label">Build</p>
+                      <p class="arch-layer__value">Vite / Tailwind CSS</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
-          </ul>
+            </article>
+          </div>
           <!-- FEATURED:END -->
         </div>
       </section>
 
-      <!-- All repositories -->
-      <section class="section" id="repositories">
+      <!-- ================= 04  SYSTEM ARCHITECTURE ===================== -->
+      <section class="section" id="architecture">
         <div class="wrap">
-          <h2 class="section__title">
-            <span class="section__num">05</span> Public repositories
-          </h2>
+          <div class="section__head">
+            <span class="section__no">04</span>
+            <h2 class="section__title">Reference architecture</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">ARC-001</span>
+          </div>
           <p class="section__note">
-            Refreshed weekly from the GitHub API. Forks are not listed.
+            The shape most of the systems I work on take. A general arrangement
+            rather than any one client system. Hover or focus a block to read what
+            it does; connected blocks highlight with it.
+          </p>
+
+          <div class="diagram ink-frame">
+            <div class="flow">
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="user"
+                  data-links="client-web client-mobile"
+                  data-desc="Staff, customers, or another system acting as the consumer of the service."
+                >
+                  <p class="node__ref">A1</p>
+                  <p class="node__name">User</p>
+                </div>
+              </div>
+
+              <span class="wire" aria-hidden="true"></span>
+
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="client-web"
+                  data-links="user gateway"
+                  data-desc="React and TypeScript front end built with Vite and Tailwind CSS, talking to the API over HTTP."
+                >
+                  <p class="node__ref">B1</p>
+                  <p class="node__name">Web client</p>
+                </div>
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="client-mobile"
+                  data-links="user gateway"
+                  data-desc="Cross-platform Flutter application consuming the same API contract as the web client."
+                >
+                  <p class="node__ref">B2</p>
+                  <p class="node__name">Mobile client</p>
+                </div>
+              </div>
+
+              <span class="wire" aria-hidden="true"></span>
+
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="gateway"
+                  data-links="client-web client-mobile api auth"
+                  data-desc="Single HTTP entry point: routing, versioning, rate limiting, and request validation before anything reaches the application."
+                >
+                  <p class="node__ref">C1</p>
+                  <p class="node__name">API gateway</p>
+                </div>
+              </div>
+
+              <span class="wire-split" aria-hidden="true"></span>
+
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="api"
+                  data-links="gateway database external queue"
+                  data-desc="Laravel or Yii2 application holding the domain logic: business rules, validation, and the transaction boundaries."
+                >
+                  <p class="node__ref">D1</p>
+                  <p class="node__name">Application API</p>
+                </div>
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="auth"
+                  data-links="gateway database"
+                  data-desc="Authentication and role-based authorisation, deciding who may perform which operation on which record."
+                >
+                  <p class="node__ref">D2</p>
+                  <p class="node__name">Authentication</p>
+                </div>
+              </div>
+
+              <span class="wire" aria-hidden="true"></span>
+
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="database"
+                  data-links="api auth queue"
+                  data-desc="Oracle or another relational database: normalised schema, indexing for the real query patterns, and migrations under version control."
+                >
+                  <p class="node__ref">E1</p>
+                  <p class="node__name">Database</p>
+                </div>
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="external"
+                  data-links="api queue"
+                  data-desc="Payment gateways and third-party services, reached with idempotency keys, timeouts, and retries around every call."
+                >
+                  <p class="node__ref">E2</p>
+                  <p class="node__name">External APIs</p>
+                </div>
+              </div>
+
+              <span class="wire" aria-hidden="true"></span>
+
+              <div class="flow__row">
+                <div
+                  class="node"
+                  tabindex="0"
+                  data-node="queue"
+                  data-links="api database external"
+                  data-desc="Queued jobs and scheduled tasks: reconciliation, settlement, reporting, and anything that must survive a failed request."
+                >
+                  <p class="node__ref">F1</p>
+                  <p class="node__name">Reporting / processing</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="diagram__readout">
+              <span class="label">Detail</span>
+              <span data-readout
+                >Select a block to read its technical description.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05  CAPABILITIES ============================ -->
+      <section class="section" id="capabilities">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="section__no">05</span>
+            <h2 class="section__title">Engineering modules</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">MOD series</span>
+          </div>
+          <p class="section__note">
+            Capabilities as discrete modules, each with the technology it is
+            delivered with.
+          </p>
+
+          <div class="modules">
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[01]</span>
+                <h3 class="module__title">Application engineering</h3>
+                <span class="panel__ref">MOD-01</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="3" y="5" width="26" height="22" />
+                  <path d="M3 11h26M9 27V11" />
+                </svg>
+                <p class="module__desc">
+                  Multi-user business applications: domain logic, background jobs,
+                  scheduled tasks, and the reporting that operations teams run on.
+                </p>
+                <ul class="module__tech">
+                  <li>Laravel</li>
+                  <li>PHP</li>
+                  <li>Yii2</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[02]</span>
+                <h3 class="module__title">API engineering</h3>
+                <span class="panel__ref">MOD-02</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M11 5 5 16l6 11M21 5l6 11-6 11M18 5l-4 22" />
+                </svg>
+                <p class="module__desc">
+                  Versioned REST APIs with consistent resource naming, request
+                  validation, predictable error envelopes, and documented contracts.
+                </p>
+                <ul class="module__tech">
+                  <li>REST</li>
+                  <li>JSON</li>
+                  <li>OpenAPI</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[03]</span>
+                <h3 class="module__title">Database engineering</h3>
+                <span class="panel__ref">MOD-03</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <ellipse cx="16" cy="7" rx="11" ry="4" />
+                  <path d="M5 7v18c0 2.2 4.9 4 11 4s11-1.8 11-4V7M5 16c0 2.2 4.9 4 11 4s11-1.8 11-4" />
+                </svg>
+                <p class="module__desc">
+                  Schema design and normalisation, indexing for the queries that
+                  actually run, tuning, and migrations kept under version control.
+                </p>
+                <ul class="module__tech">
+                  <li>Oracle</li>
+                  <li>SQL</li>
+                  <li>Relational design</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[04]</span>
+                <h3 class="module__title">System integration</h3>
+                <span class="panel__ref">MOD-04</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <circle cx="7" cy="7" r="3.5" />
+                  <circle cx="25" cy="25" r="3.5" />
+                  <path d="M7 10.5V20a5 5 0 0 0 5 5h9.5" />
+                </svg>
+                <p class="module__desc">
+                  Joining systems that were never designed to talk: data mapping,
+                  webhook handling, idempotency, retries, and observable failures.
+                </p>
+                <ul class="module__tech">
+                  <li>REST</li>
+                  <li>Webhooks</li>
+                  <li>Queues</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[05]</span>
+                <h3 class="module__title">Enterprise software</h3>
+                <span class="panel__ref">MOD-05</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M4 28V12l12-8 12 8v16" />
+                  <path d="M12 28V18h8v10" />
+                </svg>
+                <p class="module__desc">
+                  Role-based access control, audit trails, approval flows, and the
+                  reporting that regulated or finance-facing teams depend on.
+                </p>
+                <ul class="module__tech">
+                  <li>RBAC</li>
+                  <li>Audit trails</li>
+                  <li>Reporting</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[06]</span>
+                <h3 class="module__title">Mobile development</h3>
+                <span class="panel__ref">MOD-06</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="9" y="3" width="14" height="26" />
+                  <path d="M14 25h4" />
+                </svg>
+                <p class="module__desc">
+                  Cross-platform Android and iOS applications sharing one API
+                  contract with the web client.
+                </p>
+                <ul class="module__tech">
+                  <li>Flutter</li>
+                  <li>Dart</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[07]</span>
+                <h3 class="module__title">Server administration</h3>
+                <span class="panel__ref">MOD-07</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="4" y="5" width="24" height="8" />
+                  <rect x="4" y="19" width="24" height="8" />
+                  <path d="M9 9h.01M9 23h.01" />
+                </svg>
+                <p class="module__desc">
+                  Provisioning and maintaining Linux servers: web server
+                  configuration, TLS, deployments, log inspection, and backups.
+                </p>
+                <ul class="module__tech">
+                  <li>Linux</li>
+                  <li>Nginx</li>
+                  <li>Apache</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="panel">
+              <header class="panel__head">
+                <span class="module__no">[08]</span>
+                <h3 class="module__title">Payment systems</h3>
+                <span class="panel__ref">MOD-08</span>
+              </header>
+              <div class="panel__body">
+                <svg class="module__glyph" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="3" y="7" width="26" height="18" />
+                  <path d="M3 14h26M8 20h6" />
+                </svg>
+                <p class="module__desc">
+                  Transaction and payment workflows: validation rules,
+                  reconciliation, settlement states, and the failure paths that must
+                  never silently drop a record.
+                </p>
+                <ul class="module__tech">
+                  <li>Payment gateways</li>
+                  <li>Reconciliation</li>
+                  <li>Idempotency</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 06  REVISION HISTORY ======================== -->
+      <section class="section" id="history">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="section__no">06</span>
+            <h2 class="section__title">Revision history</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">REV log</span>
+          </div>
+
+          <!--
+            Generated by tools/update_site.py from real public repository history.
+            Professional roles are NOT listed here, because this repository holds no
+            record of them. To add them, fill in "timeline" in
+            tools/site.config.json and they will render above the derived log.
+          -->
+          <!-- REVS:START -->
+            <p class="section__note">Derived from public repository history: the year each repository was last pushed to, and the languages involved. This is an activity record, not an employment history &mdash; professional roles are not published here.</p>
+            <div class="revs">
+              <div class="revs__head">
+                <span class="label">Rev</span>
+                <span class="label">Period</span>
+                <span class="label">Record</span>
+                <span class="label">Detail</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 14</span>
+                <span class="rev__period">2026</span>
+                <span class="rev__title">8 repositories revised</span>
+                <span class="rev__detail">HTML, JavaScript, PHP, Python, TypeScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 13</span>
+                <span class="rev__period">2025</span>
+                <span class="rev__title">1 repository revised</span>
+                <span class="rev__detail">HTML</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 12</span>
+                <span class="rev__period">2024</span>
+                <span class="rev__title">2 repositories revised</span>
+                <span class="rev__detail">TypeScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 11</span>
+                <span class="rev__period">2023</span>
+                <span class="rev__title">8 repositories revised</span>
+                <span class="rev__detail">CSS, JavaScript, TypeScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 10</span>
+                <span class="rev__period">2022</span>
+                <span class="rev__title">6 repositories revised</span>
+                <span class="rev__detail">PHP, TypeScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 09</span>
+                <span class="rev__period">2021</span>
+                <span class="rev__title">5 repositories revised</span>
+                <span class="rev__detail">PHP, SCSS, TypeScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 08</span>
+                <span class="rev__period">2020</span>
+                <span class="rev__title">1 repository revised</span>
+                <span class="rev__detail">JavaScript</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 07</span>
+                <span class="rev__period">2019</span>
+                <span class="rev__title">2 repositories revised</span>
+                <span class="rev__detail">no language detected</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 06</span>
+                <span class="rev__period">2018</span>
+                <span class="rev__title">2 repositories revised</span>
+                <span class="rev__detail">no language detected</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 05</span>
+                <span class="rev__period">2017</span>
+                <span class="rev__title">3 repositories revised</span>
+                <span class="rev__detail">CSS, PHP</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 04</span>
+                <span class="rev__period">2016</span>
+                <span class="rev__title">3 repositories revised</span>
+                <span class="rev__detail">CSS, HTML</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 03</span>
+                <span class="rev__period">2015</span>
+                <span class="rev__title">2 repositories revised</span>
+                <span class="rev__detail">PHP</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 02</span>
+                <span class="rev__period">2014</span>
+                <span class="rev__title">7 repositories revised</span>
+                <span class="rev__detail">CSS, JavaScript, PHP</span>
+              </div>
+              <div class="rev">
+                <span class="rev__no">Rev 01</span>
+                <span class="rev__period">2013</span>
+                <span class="rev__title">2 repositories revised</span>
+                <span class="rev__detail">PHP</span>
+              </div>
+            </div>
+          <!-- REVS:END -->
+        </div>
+      </section>
+
+      <!-- ================= 07  MEASUREMENTS ============================ -->
+      <section class="section" id="measurements">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="section__no">07</span>
+            <h2 class="section__title">Measured values</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">MEA-001</span>
+          </div>
+          <p class="section__note">
+            Counted directly from the GitHub API when this page was last generated.
+            Forks are excluded throughout, so these describe work written here
+            rather than repositories collected.
+          </p>
+
+          <!-- Generated by tools/update_site.py. Do not edit by hand. -->
+          <!-- METRICS:START -->
+            <div class="gauges">
+              <div class="gauge">
+                <p class="gauge__value">52</p>
+                <p class="label gauge__label">Repositories authored</p>
+              </div>
+              <div class="gauge">
+                <p class="gauge__value">7</p>
+                <p class="label gauge__label">Languages in use</p>
+              </div>
+              <div class="gauge">
+                <p class="gauge__value">2014</p>
+                <p class="label gauge__label">First public commit</p>
+              </div>
+              <div class="gauge">
+                <p class="gauge__value">2026</p>
+                <p class="label gauge__label">Most recent activity</p>
+              </div>
+              <div class="gauge">
+                <p class="gauge__value">7</p>
+                <p class="label gauge__label">Stars received</p>
+              </div>
+            </div>
+
+            <div class="dist ink-frame">
+              <div class="dist__head">
+                <span class="smark" aria-hidden="true">B</span>
+                <span class="label">Language distribution &mdash; by repository count</span>
+                <span class="panel__ref" style="margin-left:auto">MEA-002</span>
+              </div>
+              <div class="dist__body">
+                <div class="dist__bar" role="img" aria-label="Language distribution across 52 repositories"><span class="dist__seg" data-lang="PHP" style="width:29.73%" title="PHP: 11"></span><span class="dist__seg" data-lang="JavaScript" style="width:24.32%" title="JavaScript: 9"></span><span class="dist__seg" data-lang="TypeScript" style="width:18.92%" title="TypeScript: 7"></span><span class="dist__seg" data-lang="CSS" style="width:13.51%" title="CSS: 5"></span><span class="dist__seg" data-lang="HTML" style="width:8.11%" title="HTML: 3"></span><span class="dist__seg" data-lang="Python" style="width:2.70%" title="Python: 1"></span><span class="dist__seg" data-lang="SCSS" style="width:2.70%" title="SCSS: 1"></span></div>
+                <ul class="dist__key">
+                  <li data-lang="PHP"><span class="swatch"></span>PHP <b>30%</b></li>
+                  <li data-lang="JavaScript"><span class="swatch"></span>JavaScript <b>24%</b></li>
+                  <li data-lang="TypeScript"><span class="swatch"></span>TypeScript <b>19%</b></li>
+                  <li data-lang="CSS"><span class="swatch"></span>CSS <b>14%</b></li>
+                  <li data-lang="HTML"><span class="swatch"></span>HTML <b>8%</b></li>
+                  <li data-lang="Python"><span class="swatch"></span>Python <b>3%</b></li>
+                  <li data-lang="SCSS"><span class="swatch"></span>SCSS <b>3%</b></li>
+                </ul>
+              </div>
+            </div>
+          <!-- METRICS:END -->
+        </div>
+      </section>
+
+      <!-- ================= 08  REPOSITORY INDEX ======================== -->
+      <section class="section" id="index">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="section__no">08</span>
+            <h2 class="section__title">Repository index</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">IDX-001</span>
+          </div>
+          <p class="section__note">
+            Every public repository written here, most recently pushed first.
+            Refreshed weekly. Forks are not listed.
           </p>
 
           <!-- Generated by tools/update_site.py. Do not edit by hand. -->
           <!-- REPOS:START -->
-        <div class="repos">
-          <a class="repo" href="https://github.com/daudmabena/daudmabena.github.io" target="_blank" rel="noopener">
-            <h3 class="repo__name">daudmabena.github.io</h3>
+          <div class="repos">
+            <a class="repo" href="https://github.com/daudmabena/daudmabena.github.io" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">01</span>
+                <span class="repo__name">daudmabena.github.io</span>
+              </span>
             <p class="repo__desc">Portfolio for Daud Mabena</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="HTML"><span class="dot"></span>HTML</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/bismuth-cms" target="_blank" rel="noopener">
-            <h3 class="repo__name">bismuth-cms</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">
-            <h3 class="repo__name">Vendite-Maestria</h3>
+              <ul class="repo__meta">
+              <li data-lang="HTML"><span class="dot"></span>HTML</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/bismuth-cms" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">02</span>
+                <span class="repo__name">bismuth-cms</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/Vendite-Maestria" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">03</span>
+                <span class="repo__name">Vendite-Maestria</span>
+              </span>
             <p class="repo__desc">Vendite &amp; Maestria is a Laravel e-commerce codebase organized by domain: catalog, checkout, customer, fulfillment, promotion, content, reporting, and shared shop core. Each area is a Composer package with its own routes, migrations, and tests.</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/my_flask_api" target="_blank" rel="noopener">
-            <h3 class="repo__name">my_flask_api</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="Python"><span class="dot"></span>Python</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/legal-content-writer" target="_blank" rel="noopener">
-            <h3 class="repo__name">legal-content-writer</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">
-            <h3 class="repo__name">task-manager</h3>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/my_flask_api" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">04</span>
+                <span class="repo__name">my_flask_api</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="Python"><span class="dot"></span>Python</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/legal-content-writer" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">05</span>
+                <span class="repo__name">legal-content-writer</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/task-manager" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">06</span>
+                <span class="repo__name">task-manager</span>
+              </span>
             <p class="repo__desc">A modern, full-featured task management application built with Laravel, Inertia.js, and React. Features comprehensive user management, role-based access control, and advanced task tracking with audit trails.</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/curl_post" target="_blank" rel="noopener">
-            <h3 class="repo__name">curl_post</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/snake-game" target="_blank" rel="noopener">
-            <h3 class="repo__name">snake-game</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="HTML"><span class="dot"></span>HTML</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/olas-admin" target="_blank" rel="noopener">
-            <h3 class="repo__name">olas-admin</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/gptprompthub" target="_blank" rel="noopener">
-            <h3 class="repo__name">gptprompthub</h3>
+              <ul class="repo__meta">
+              <li data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/curl_post" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">07</span>
+                <span class="repo__name">curl_post</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/snake-game" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">08</span>
+                <span class="repo__name">snake-game</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="HTML"><span class="dot"></span>HTML</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/olas-admin" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">09</span>
+                <span class="repo__name">olas-admin</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/gptprompthub" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">10</span>
+                <span class="repo__name">gptprompthub</span>
+              </span>
             <p class="repo__desc">https://gptprompthub.online</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/noasis-training" target="_blank" rel="noopener">
-            <h3 class="repo__name">noasis-training</h3>
+              <ul class="repo__meta">
+              <li data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/noasis-training" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">11</span>
+                <span class="repo__name">noasis-training</span>
+              </span>
             <p class="repo__desc">NOASIS Training Application</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/yii2-bs4-advanced" target="_blank" rel="noopener">
-            <h3 class="repo__name">yii2-bs4-advanced</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/yii2-bs4-basic" target="_blank" rel="noopener">
-            <h3 class="repo__name">yii2-bs4-basic</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/realkids" target="_blank" rel="noopener">
-            <h3 class="repo__name">realkids</h3>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/lms" target="_blank" rel="noopener">
-            <h3 class="repo__name">lms</h3>
+              <ul class="repo__meta">
+              <li data-lang="TypeScript"><span class="dot"></span>TypeScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/yii2-bs4-advanced" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">12</span>
+                <span class="repo__name">yii2-bs4-advanced</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/yii2-bs4-basic" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">13</span>
+                <span class="repo__name">yii2-bs4-basic</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/realkids" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">14</span>
+                <span class="repo__name">realkids</span>
+              </span>
+              <ul class="repo__meta">
+              <li data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/lms" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">15</span>
+                <span class="repo__name">lms</span>
+              </span>
             <p class="repo__desc">Learning Management System (LMS)</p>
-            <ul class="repo__meta">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/fadhatech" target="_blank" rel="noopener">
-            <h3 class="repo__name">fadhatech</h3>
+              <ul class="repo__meta">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/fadhatech" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">16</span>
+                <span class="repo__name">fadhatech</span>
+              </span>
             <p class="repo__desc">GitHub Pages</p>
-            <ul class="repo__meta">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/YoutubeVideoDetails" target="_blank" rel="noopener">
-            <h3 class="repo__name">YoutubeVideoDetails</h3>
+              <ul class="repo__meta">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/YoutubeVideoDetails" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">17</span>
+                <span class="repo__name">YoutubeVideoDetails</span>
+              </span>
             <p class="repo__desc">Fetch Youtube video details using the class</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/jQuery-Table-Tabs" target="_blank" rel="noopener">
-            <h3 class="repo__name">jQuery-Table-Tabs</h3>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/jQuery-Table-Tabs" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">18</span>
+                <span class="repo__name">jQuery-Table-Tabs</span>
+              </span>
             <p class="repo__desc">Simple tabs for tables</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/DataTable" target="_blank" rel="noopener">
-            <h3 class="repo__name">DataTable</h3>
+              <ul class="repo__meta">
+              <li data-lang="JavaScript"><span class="dot"></span>JavaScript</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>1</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/DataTable" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">19</span>
+                <span class="repo__name">DataTable</span>
+              </span>
             <p class="repo__desc">JQuery Data Table</p>
-            <ul class="repo__meta">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/UserAuthenticationClass" target="_blank" rel="noopener">
-            <h3 class="repo__name">UserAuthenticationClass</h3>
-            <ul class="repo__meta">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/gethashtag" target="_blank" rel="noopener">
-            <h3 class="repo__name">gethashtag</h3>
+              <ul class="repo__meta">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/UserAuthenticationClass" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">20</span>
+                <span class="repo__name">UserAuthenticationClass</span>
+              </span>
+              <ul class="repo__meta">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/gethashtag" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">21</span>
+                <span class="repo__name">gethashtag</span>
+              </span>
             <p class="repo__desc">Get hash tag from long paragraph</p>
-            <ul class="repo__meta">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/passwordHasher" target="_blank" rel="noopener">
-            <h3 class="repo__name">passwordHasher</h3>
+              <ul class="repo__meta">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/passwordHasher" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">22</span>
+                <span class="repo__name">passwordHasher</span>
+              </span>
             <p class="repo__desc">Hashes a password</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/vStandard" target="_blank" rel="noopener">
-            <h3 class="repo__name">vStandard</h3>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/vStandard" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">23</span>
+                <span class="repo__name">vStandard</span>
+              </span>
             <p class="repo__desc">Standard WordPress Template</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/facebook-timeline-posts" target="_blank" rel="noopener">
-            <h3 class="repo__name">facebook-timeline-posts</h3>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/facebook-timeline-posts" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">24</span>
+                <span class="repo__name">facebook-timeline-posts</span>
+              </span>
             <p class="repo__desc">A PHP class which accesses a Facebook page and returns the statuses nicely formatted</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-          <a class="repo" href="https://github.com/daudmabena/PHP-Form-Validation" target="_blank" rel="noopener">
-            <h3 class="repo__name">PHP-Form-Validation</h3>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>1</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+            <a class="repo" href="https://github.com/daudmabena/PHP-Form-Validation" target="_blank" rel="noopener">
+              <span class="repo__top">
+                <span class="repo__no">25</span>
+                <span class="repo__name">PHP-Form-Validation</span>
+              </span>
             <p class="repo__desc">PHP HTML Form validation</p>
-            <ul class="repo__meta">
-              <li class="repo__lang" data-lang="PHP"><span class="dot"></span>PHP</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
-            </ul>
-          </a>
-        </div>
+              <ul class="repo__meta">
+              <li data-lang="PHP"><span class="dot"></span>PHP</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg>0</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V7M12 13v4"/></svg>0</li>
+              </ul>
+            </a>
+          </div>
           <!-- REPOS:END -->
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- ================= TITLE BLOCK / CONTACT ======================= -->
       <section class="section" id="contact">
         <div class="wrap">
-          <div class="contact">
-            <h2>Open to backend, API, and integration work</h2>
-            <p>
-              If you are building something that needs a considered back end or has
-              to talk reliably to other systems, I would be glad to hear about it.
-            </p>
+          <div class="section__head">
+            <span class="section__no">09</span>
+            <h2 class="section__title">Title block</h2>
+            <span class="section__rule" aria-hidden="true"></span>
+            <span class="ref">TB-001</span>
+          </div>
 
-            <div class="contact__links">
-              <a
-                class="btn btn--primary"
-                href="https://github.com/daudmabena"
-                target="_blank"
-                rel="noopener"
-                >GitHub</a
-              >
-              <a
-                class="btn"
-                href="https://x.com/daudmabena"
-                target="_blank"
-                rel="noopener"
-                >X / Twitter</a
-              >
-              <a
-                class="btn"
-                href="https://dev.page/daud"
-                target="_blank"
-                rel="noopener"
-                >dev.page</a
-              >
+          <div class="titleblock">
+            <div class="titleblock__strip">
+              <span class="seal font-seal" aria-hidden="true">印</span>
+              <span class="label font-calligraphy-行">Contact &amp; seal</span>
+              <span class="panel__ref">Rev 2026.08</span>
+            </div>
 
-              <!--
-                TO ADD: an email address and LinkedIn. Both are deliberately left
-                out rather than filled with a placeholder, so nothing fake ships.
-                Uncomment and fill in:
-
-                <a class="btn" href="mailto:you@example.com">Email</a>
-                <a class="btn" href="https://www.linkedin.com/in/your-handle/"
-                   target="_blank" rel="noopener">LinkedIn</a>
-              -->
+            <div class="titleblock__grid">
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Name</span>
+                <p class="tb-cell__value">Daud Mabena</p>
+              </div>
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Title</span>
+                <p class="tb-cell__value">Software Developer</p>
+              </div>
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Drawing</span>
+                <p class="tb-cell__value">Developer portfolio</p>
+              </div>
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Revision</span>
+                <p class="tb-cell__value">2026</p>
+              </div>
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Scale</span>
+                <p class="tb-cell__value">1:1</p>
+              </div>
+              <div class="tb-cell">
+                <span class="label tb-cell__label">Status</span>
+                <p class="tb-cell__value">
+                  <span class="status-live">Active</span>
+                </p>
+              </div>
+              <div class="tb-cell tb-cell--wide">
+                <span class="label tb-cell__label">Contact</span>
+                <p class="tb-cell__value tb-cell__value--links">
+                  <a href="https://github.com/daudmabena" target="_blank" rel="noopener"
+                    >GitHub</a
+                  >
+                  <a href="https://x.com/daudmabena" target="_blank" rel="noopener"
+                    >X / Twitter</a
+                  >
+                  <a href="https://dev.page/daud" target="_blank" rel="noopener"
+                    >dev.page</a
+                  >
+                  <!--
+                    TO ADD: an email address and LinkedIn. Both are deliberately
+                    left out rather than filled with a placeholder, so nothing fake
+                    ships. Uncomment and fill in with your real links.
+                  -->
+                </p>
+              </div>
             </div>
           </div>
+
+          <p class="callout" style="margin-top: 1.25rem">
+            Open to backend, API, and integration work
+          </p>
         </div>
       </section>
     </main>
@@ -676,9 +1430,14 @@
     <footer class="site-footer">
       <div class="wrap site-footer__inner">
         <p>&copy; <span id="year">2026</span> Daud Mabena</p>
-        <p class="site-footer__meta">
-          Built as a static site with no framework or build step.
-          <a href="https://github.com/daudmabena/daudmabena.github.io" target="_blank" rel="noopener">Source</a>
+        <p>
+          Static site &mdash; no framework, no build step &middot;
+          <a
+            href="https://github.com/daudmabena/daudmabena.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
         </p>
       </div>
     </footer>

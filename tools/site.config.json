@@ -13,6 +13,28 @@
     "task-manager"
   ],
 
+  "_architecture_note": "Per-project architecture rows for the project drawings. Only state a layer you can actually back up; every value here is taken from that repository's own GitHub description or topics, and layers that its metadata does not mention are left out rather than guessed. Add rows as you confirm them. Keys are free text, so 'Queue', 'Cache', or 'Auth' work as well as the ones used here.",
+
+  "architecture": {
+    "Vendite-Maestria": {
+      "Backend": "Laravel / PHP",
+      "Structure": "Modular monolith, Composer packages",
+      "Domains": "Catalog, checkout, customer, fulfillment",
+      "Testing": "Per-package migrations and tests"
+    },
+    "task-manager": {
+      "Frontend": "React / TypeScript",
+      "Bridge": "Inertia.js",
+      "Backend": "Laravel / PHP",
+      "Access control": "Role-based, Spatie",
+      "Build": "Vite / Tailwind CSS"
+    }
+  },
+
+  "_timeline_note": "Professional roles, newest first, rendered as a revision history. Left empty deliberately: nothing here is invented, and this file has no record of your employment. Fill it in and the section appears above the derived activity log. Format: {\"rev\": \"04\", \"period\": \"2024-\", \"title\": \"Your role\", \"detail\": \"One line on the systems you worked on\"}",
+
+  "timeline": [],
+
   "_extra_note": "Repositories outside your own account, such as organisation ones, given as owner/name. FADHATECHNOLOGY/comas used to be listed here but is no longer publicly available, so it was removed.",
 
   "extra": [],
