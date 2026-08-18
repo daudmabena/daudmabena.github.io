@@ -396,7 +396,7 @@ Pick the strongest existing project, or start the Laravel flagship. Depth on one
 repository beats shallow edits across five.
 
 - **Day 8.** Write the README properly, using the template in
-  `github-profile/templates/PROJECT_README_TEMPLATE.md`.
+  `templates/PROJECT_README_TEMPLATE.md`.
 - **Day 9.** Screenshots of the running application, committed under `docs/`.
 - **Day 10.** An architecture diagram, as Mermaid so it stays editable in the
   repository. Examples in `templates/architecture-diagram.md`.

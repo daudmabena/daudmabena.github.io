@@ -11,7 +11,7 @@
   ----------------------------------------------------------------------------
 -->
 
-<!-- REPLACE: optional banner. Delete these three lines if you do not add one. See PROFILE_STRATEGY.md for the banner concept. -->
+<!-- REPLACE: optional banner. Add assets/banner.png and uncomment the block below, or delete both. See PROFILE_STRATEGY.md for the banner concept. -->
 <!-- <p align="center">
   <img src="./assets/banner.png" alt="Daud Mabena — Software Developer" width="100%" />
 </p> -->
