@@ -26,11 +26,17 @@ repositories behind it hold up when someone opens them.
 ## Two things worth knowing before you start
 
 **The README is the smaller half of the job.** It states what you do; your
-repositories are where a reviewer checks whether it is true. Your public
-repositories are currently mostly small jQuery, WordPress, and mysqli utilities,
-which do not match a profile describing Laravel, React, Flutter, Oracle, and
-payment integrations. Closing that gap matters more than any wording choice, and
-`PROFILE_STRATEGY.md` Part 4 sets out how.
+repositories are where a reviewer checks whether it is true. You have 344 public
+repositories, 292 of them forks, and 44 of your own. The forks are being ignored
+rather than archived, which is fine — they are already excluded from the portfolio
+site and from the language card.
+
+The real problem is documentation, not code: **15 of your 44 own repositories have
+no description and 43 have no topics**, including recent TypeScript and PHP work
+from 2024 to 2026. That work is good evidence that is currently invisible.
+Documenting two or three of those projects is worth more than any wording choice
+in the README, and far cheaper than building something new.
+`PROFILE_STRATEGY.md` Part 4 sets out which ones and in what order.
 
 **Nothing here invents anything on your behalf.** Every project, statistic,
 certification, and contribution is left as a marked placeholder for you to fill

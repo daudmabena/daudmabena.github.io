@@ -248,38 +248,75 @@ Pin for evidence of engineering judgement, not for volume:
 
 ### Your current position, honestly
 
-Your public repositories are mostly small utilities and snippets from an earlier
-phase of your work — jQuery table helpers, WordPress themes and snippets, mysqli
-wrappers, PHP form validation. They are not bad, but they represent neither the
-technologies nor the scale of work you describe: enterprise systems, Laravel,
-React, Flutter, Oracle, payment integrations. **Closing that gap is the highest-value
-change available to you, worth more than any wording in the README.** A reviewer
-who reads "enterprise systems and financial integrations" and then finds
-`jQuery-Table-Tabs` and `Hueman-Child-Theme` resolves the contradiction against
-you.
+Taken from the GitHub API rather than from memory: **344 public repositories, of
+which 292 are forks and 44 are your own.** Nothing is archived.
 
-Three categories to deal with:
+**The forks are being ignored, not cleaned up.** That is a deliberate decision and
+a reasonable one — archiving 292 repositories by hand is a poor use of time, and
+the places that matter already leave them out:
 
-- **Derived or third-party work** — `Mysqli-wrapper` (its own description credits
-  another author), `summernote_wysiwyg`, `Public-social-Api-php`,
-  `mimic-tool-box`, `Hueman-Child-Theme`, `community-starter-kit`. Where these
-  are forks, fork them properly so GitHub shows the upstream link; where the code
-  was copied in, state the origin and licence at the top of the README. Otherwise
-  archive them. Nothing damages technical credibility faster than appearing to
-  present someone else's library as your own.
-- **Snippet repositories** — `credits`, `sql-Library`, `Woordpress-Snippets`,
-  `passwordHasher`, `gethashtag`, `DataTable`, `jQuery-Table-Tabs`,
-  `UserAuthenticationClass`. Consolidate the worthwhile parts into one clearly
-  documented `snippets` or `php-utilities` repository and archive the rest.
-  Twenty thin repositories look like clutter; one curated one looks deliberate.
-- **Started but empty** — `lms`, `fadhatech`, and `FADHATECHNOLOGY/comas` show no
-  primary language, which suggests little or no code. Either build one of them
-  into a complete, documented project or archive it. An empty repository with an
-  ambitious name is a liability.
+- The portfolio site excludes them (`include_forks: false` in
+  `tools/site.config.json`).
+- The most-used-languages card excludes them: it only ever reads repositories you
+  own and have not forked, so your language totals are unaffected.
+- Commits inside a fork do not count as contributions, so the statistics card and
+  contribution graph are unaffected too.
 
-Archiving is not deletion. An archived repository stays available but is marked
-read-only and drops out of your active repository list, which is exactly what you
-want for old work you do not wish to hide but do not wish to be judged on.
+The one place they stay visible is the Repositories tab on your profile, which has
+no setting to hide forks. Accept that. Nobody forms their impression of you from
+that tab — they read the README and click the pinned repositories, and forks
+appear in neither. If it ever starts to bother you, archiving is the only remedy,
+and it can be done gradually.
+
+**The more useful correction is that your own recent work is better than your old
+public repositories suggest.** Alongside the 2013–2017 material (jQuery table
+helpers, WordPress themes, mysqli wrappers, PHP form validation) there is a
+substantial run of recent, relevant projects that the portfolio had never shown:
+
+| Repository | Language | Last pushed |
+| --- | --- | --- |
+| `bismuth-cms` | TypeScript | 2026 |
+| `Vendite-Maestria` | PHP | 2026 |
+| `task-manager` | TypeScript | 2026 |
+| `curl_post` | TypeScript | 2026 |
+| `my_flask_api` | Python | 2026 |
+| `legal-content-writer` | JavaScript | 2026 |
+| `olas-admin` | TypeScript | 2024 |
+| `noasis-training` | TypeScript | 2022 |
+| `yii2-bs4-basic`, `yii2-bs4-advanced` | PHP | 2021 |
+
+This changes the priority. The gap between what your profile claims and what your
+repositories show is narrower than the old public list implied — but these
+repositories are undocumented, which makes them invisible as evidence. **15 of your
+44 own repositories have no description at all, and 43 of 44 have no topics.** A
+reviewer opening `bismuth-cms` today finds no README, no description, and no
+explanation of what it is.
+
+So the highest-value work is not building something new. It is documenting two or
+three of the projects you have already written, using
+`REPOSITORY_PLAYBOOK.md`. That converts existing work into evidence, which is far
+cheaper than starting again.
+
+Two things still worth handling directly:
+
+- **Work that is not yours.** `Mysqli-wrapper` (its own description credits another
+  author), `summernote_wysiwyg`, `Public-social-Api-php`, `mimic-tool-box`,
+  `Hueman-Child-Theme`, and `lukaszfiszer.github.io` (another developer's personal
+  site) are not forks, so GitHub shows no upstream link and they read as your own.
+  Either state the origin and licence at the top of each README, or archive them.
+  Nothing damages technical credibility faster than appearing to present someone
+  else's library as your own. These are already left off the portfolio site.
+- **Repositories that are empty or scaffolds.** `lms`, `fadhatech`, `application`,
+  `example-app`, `dudee`, and `AwesomeProject` show no primary language or are
+  untouched framework scaffolds. They are excluded from the site; leaving them
+  public is harmless, but do not pin them.
+
+`FADHATECHNOLOGY/comas` is no longer publicly available, so the card that used to
+link to it has been dropped from the site.
+
+Archiving, where you do use it, is not deletion. An archived repository stays
+available but is marked read-only, which is what you want for old work you do not
+wish to hide but do not wish to be judged on.
 
 ### Pinning order
 
@@ -310,6 +347,27 @@ Until repositories 1 to 5 exist, pin the best of what you have rather than filli
 all six slots. **Four strong pins are better than six that include two weak ones**,
 because a reviewer's impression is set by the weakest thing they open.
 
+### Candidates you already have
+
+Rather than starting from nothing, these are the existing repositories closest to
+the shape above. Each needs a description, topics, and a README before it is worth
+pinning — that is the work, not the code.
+
+| Slot | Best existing candidate | What it needs |
+| --- | --- | --- |
+| Laravel or PHP flagship | `Vendite-Maestria` (PHP, 2026) | Confirm it is substantial, then document it fully |
+| REST API with documentation | `my_flask_api` (Python) or `curl_post` (TypeScript) | An OpenAPI specification, plus documented errors. Python is off your advertised stack, so prefer a PHP or TypeScript API if you have one |
+| React and TypeScript frontend | `bismuth-cms`, `olas-admin`, or `task-manager` (all TypeScript) | A description, a README, screenshots, and a deployed link |
+| Yii2 example | `yii2-bs4-basic` or `yii2-bs4-advanced` | Check first whether these are your own work or copies of the standard Yii2 application templates. If they are the stock templates, do not pin them |
+| Flutter application | none public | The one genuine gap. Nothing in your public repositories is Dart or Flutter, so the mobile claim in the README currently has no public evidence behind it |
+| Integration or payment workflow | none public | Also unevidenced publicly. This is your strongest differentiator, so a small sandbox demonstration is worth more here than anywhere else |
+
+Two of the six categories have no public evidence at all: **Flutter and payment
+integrations**. Those are precisely the two things that most distinguish your
+README from an average one, so they are the highest-return things to build. Keep
+the claims in the README — they are true of your professional work — but be aware
+a reviewer cannot currently verify them, and expect to be asked in an interview.
+
 Anything you can build from scratch works here — you do not need employer code,
 and you should not use it. Rebuilding a system you understand well, at smaller
 scale, with clean architecture and documentation, is more impressive than a
@@ -323,11 +381,17 @@ Repository-level work is in `REPOSITORY_PLAYBOOK.md`.
 
 ### Account settings
 
-- [ ] Display name set to `Daud Mabena` (not all capitals)
+- [ ] Display name set to `Daud Mabena` (currently `DAUD ABASS MABENA`)
 - [ ] Profile photograph meeting the criteria above
-- [ ] Bio set, under 160 characters, no filler adjectives
+- [ ] Bio replaced. The current one reads "Software Developer who love to create
+      things that uplift the community, happy to lean new thing daily", which
+      contains three errors — "who love", "lean" for learn, and "new thing". It
+      appears beside every comment you leave on other projects, so it is worth
+      fixing before anything else on this list.
 - [ ] Location set to `Dar es Salaam, Tanzania`
-- [ ] Website set to `https://daudmabena.github.io`
+- [ ] Website field pointed at `https://daudmabena.github.io` (currently
+      `dev.page/daud`), now that the portfolio is current
+- [ ] `@FADHATECHNOLOGY` company field checked for the trailing space
 - [ ] LinkedIn added to profile links, with matching name and headline
 - [ ] Public email either a dedicated professional address or left blank
 - [ ] "Include private contributions on my profile" enabled
@@ -351,10 +415,17 @@ Repository-level work is in `REPOSITORY_PLAYBOOK.md`.
 
 ### Repository presentation
 
-- [ ] Derived and third-party repositories attributed or archived
-- [ ] Snippet repositories consolidated, remainder archived
-- [ ] Empty repositories built out or archived
-- [ ] Every remaining public repository has a one-line description and topics
+- [x] Forks ignored rather than archived — already excluded from the portfolio
+      site and from the language card, and they cannot be hidden from the
+      Repositories tab, so no action is being taken
+- [ ] Descriptions added to your own repositories: 15 of 44 have none, including
+      recent work like `bismuth-cms`, `olas-admin`, and `curl_post`
+- [ ] Topics added: 43 of 44 have none, so none of them surface in browsing
+- [ ] Work that is not yours attributed in its README or archived
+      (`Mysqli-wrapper`, `summernote_wysiwyg`, `Public-social-Api-php`,
+      `mimic-tool-box`, `Hueman-Child-Theme`, `lukaszfiszer.github.io`)
+- [ ] Two or three recent projects documented to the standard in
+      `REPOSITORY_PLAYBOOK.md` — the highest-value item on this list
 - [ ] Four to six repositories pinned, strongest first
 - [ ] Each pinned repository has a README with screenshots and working setup steps
 - [ ] No credentials, `.env` files, dumps, or client data in any public history
@@ -383,17 +454,22 @@ building something worth showing.
   the images render in light and dark themes.
 - **Day 3.** Account settings: display name, photograph, bio, location, website,
   private-contribution visibility, two-factor authentication.
-- **Day 4.** Audit every public repository. Decide keep, archive, or attribute for
-  each, and write the list down before acting on it.
-- **Day 5.** Execute the archiving. Attribute the derived repositories properly.
-  Correct the organisation name spelling.
-- **Weekend.** Consolidate the snippet repositories into one documented utilities
-  repository. Add a description and topics to every repository you kept.
+- **Day 4.** Write a one-line description for each of your own repositories that
+  has none — 15 of them, including `bismuth-cms`, `olas-admin`, and `curl_post`.
+  This is the fastest visible improvement available, and it needs no code. Skip
+  the forks entirely.
+- **Day 5.** Add five to ten topics to the repositories worth keeping, so they
+  surface when people browse. Attribute the repositories that hold other people's
+  code. Correct the organisation name spelling.
+- **Weekend.** Open your three most recent projects and decide, honestly, which
+  one is closest to being presentable. That is the subject of week 2.
 
 ### Week 2 — Make one project genuinely good
 
-Pick the strongest existing project, or start the Laravel flagship. Depth on one
-repository beats shallow edits across five.
+Depth on one repository beats shallow edits across five. Start with the project
+you chose at the weekend — most likely `Vendite-Maestria` or `bismuth-cms` — rather
+than starting something new. Documenting code you have already written is much
+cheaper than writing more.
 
 - **Day 8.** Write the README properly, using the template in
   `templates/PROJECT_README_TEMPLATE.md`.
