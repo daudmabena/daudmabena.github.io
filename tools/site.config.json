@@ -1,0 +1,44 @@
+{
+  "username": "daudmabena",
+
+  "sort": "pushed",
+  "order": "desc",
+
+  "include_forks": false,
+
+  "extra": [
+    "FADHATECHNOLOGY/comas"
+  ],
+
+  "_exclude_note": "Repositories left off the site, each with the reason. This is a starting point, not a verdict: add or remove entries freely. Anything excluded here is still public on GitHub, it is just not featured on the portfolio. To hide a repository from your GitHub profile as well, archive it.",
+
+  "exclude": {
+    "lukaszfiszer.github.io": "another developer's personal site, copied rather than forked",
+    "Mysqli-wrapper": "its own description credits another author",
+    "summernote_wysiwyg": "the Summernote editor library, not original work",
+    "mimic-tool-box": "third-party component library",
+    "Public-social-Api-php": "third-party API wrapper",
+    "Hueman-Child-Theme": "child theme of a third-party WordPress theme",
+
+    "example-app": "framework scaffold with no original code",
+    "sulu-skeleton": "upstream project skeleton",
+    "starter-hugo-online-course": "upstream template",
+    "community-starter-kit": "GitHub template repository",
+    "datocms-card": "upstream starter",
+    "datocms-virtual-event-starter-kit-demo-715": "auto-named starter demo",
+    "react-bootstrap": "library name, appears to be a copy",
+    "react-tailwindcss": "starter template",
+    "AwesomeProject": "default React Native project name",
+    "angular-crud-ivy-txu7sm": "auto-generated StackBlitz name",
+
+    "daud-mabena": "earlier portfolio attempt, superseded by daudmabena.github.io",
+    "daud-abass-mabena": "earlier portfolio attempt, superseded by daudmabena.github.io",
+
+    "credits": "a list of vendors, not a project",
+    "sql-Library": "loose snippet collection",
+    "Woordpress-Snippets": "snippet collection, and the name misspells WordPress",
+    "application": "placeholder name, unclear purpose",
+    "dudee": "scratch repository",
+    "sketches": "scratch experiments"
+  }
+}
