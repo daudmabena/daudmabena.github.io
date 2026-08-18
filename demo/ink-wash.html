@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>水墨意境 — Ink Wash Cultural Exhibition</title>
+    <meta
+      name="description"
+      content="A tranquil ink wash exhibition page — brand philosophy, artwork showcase, and contact in traditional Eastern aesthetics."
+    />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#F8F5F0" />
+
+    <!-- Calligraphy font system -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#F8F5F0",
+              ivory: "#FFFFF0",
+              beige: "#FAF0E6",
+              "ink-burnt": "#1a1a1a",
+              "ink-dense": "#333333",
+              "ink-heavy": "#666666",
+              "ink-light": "#999999",
+              "ink-clear": "#cccccc",
+              seal: "#C41E3A",
+              gold: "#D4AF37",
+              landscape: "#2E8B57",
+            },
+            fontFamily: {
+              cao: ['"Liu Jian Mao Cao"', "cursive"],
+              xing: ['"Ma Shan Zheng"', "cursive"],
+              xingcao: ['"Zhi Mang Xing"', "cursive"],
+              kai: ['"ZCOOL XiaoWei"', "serif"],
+              seal: ['"ZCOOL KuaiLe"', "cursive"],
+              serif: ['"Noto Serif SC"', "Songti SC", "serif"],
+            },
+            transitionDuration: {
+              ink: "1000ms",
+              bleed: "2500ms",
+            },
+            transitionTimingFunction: {
+              bleed: "cubic-bezier(0.19, 1, 0.22, 1)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/ink-wash-demo.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-paper text-ink-dense font-kai antialiased overflow-x-hidden ink-paper-bg"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-seal focus:px-4 focus:py-2 focus:text-ivory focus:font-xing"
+      >Skip to content</a
+    >
+
+    <!-- Fixed sidebar navigation — vertical bilingual -->
+    <nav
+      class="fixed left-0 top-0 z-50 flex h-full w-16 flex-col items-center justify-center gap-10 border-r border-ink-burnt/10 bg-paper/80 py-12 backdrop-blur-sm md:w-20 lg:w-24"
+      aria-label="Section navigation"
+    >
+      <a
+        href="#hero"
+        class="nav-link group flex flex-col items-center gap-2 text-ink-light/60 transition-all duration-ink ease-bleed hover:text-ink-heavy"
+        data-section="hero"
+      >
+        <span
+          class="vertical-text font-xing text-xl tracking-[0.2em] transition-colors duration-ink group-[.is-active]:text-seal"
+          >首</span
+        >
+        <span
+          class="nav-en font-serif text-[9px] font-light uppercase tracking-widest opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          >Home</span
+        >
+      </a>
+      <a
+        href="#philosophy"
+        class="nav-link group flex flex-col items-center gap-2 text-ink-light/60 transition-all duration-ink ease-bleed hover:text-ink-heavy"
+        data-section="philosophy"
+      >
+        <span
+          class="vertical-text font-xing text-xl tracking-[0.2em] transition-colors duration-ink group-[.is-active]:text-seal"
+          >理</span
+        >
+        <span
+          class="nav-en font-serif text-[9px] font-light uppercase tracking-widest opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          >Philosophy</span
+        >
+      </a>
+      <a
+        href="#gallery"
+        class="nav-link group flex flex-col items-center gap-2 text-ink-light/60 transition-all duration-ink ease-bleed hover:text-ink-heavy"
+        data-section="gallery"
+      >
+        <span
+          class="vertical-text font-xing text-xl tracking-[0.2em] transition-colors duration-ink group-[.is-active]:text-seal"
+          >展</span
+        >
+        <span
+          class="nav-en font-serif text-[9px] font-light uppercase tracking-widest opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          >Gallery</span
+        >
+      </a>
+      <a
+        href="#poetry"
+        class="nav-link group flex flex-col items-center gap-2 text-ink-light/60 transition-all duration-ink ease-bleed hover:text-ink-heavy"
+        data-section="poetry"
+      >
+        <span
+          class="vertical-text font-xing text-xl tracking-[0.2em] transition-colors duration-ink group-[.is-active]:text-seal"
+          >诗</span
+        >
+        <span
+          class="nav-en font-serif text-[9px] font-light uppercase tracking-widest opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          >Poetry</span
+        >
+      </a>
+      <a
+        href="#contact"
+        class="nav-link group flex flex-col items-center gap-2 text-ink-light/60 transition-all duration-ink ease-bleed hover:text-ink-heavy"
+        data-section="contact"
+      >
+        <span
+          class="vertical-text font-xing text-xl tracking-[0.2em] transition-colors duration-ink group-[.is-active]:text-seal"
+          >联</span
+        >
+        <span
+          class="nav-en font-serif text-[9px] font-light uppercase tracking-widest opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.is-active]:opacity-100"
+          >Contact</span
+        >
+      </a>
+
+      <!-- Brand seal at bottom of nav -->
+      <div
+        class="seal-mark mt-auto flex h-14 w-14 rotate-[-3deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink hover:rotate-0"
+        aria-hidden="true"
+      >
+        <span class="vertical-text font-seal text-lg leading-none">墨</span>
+      </div>
+    </nav>
+
+    <!-- Side inscription -->
+    <p
+      class="fixed right-4 top-1/2 z-10 hidden -translate-y-1/2 vertical-text font-xingcao text-lg tracking-[0.25em] text-ink-light/40 lg:block xl:right-8"
+      aria-hidden="true"
+    >
+      虚实相生 · 无画处皆成妙境
+    </p>
+
+    <div class="relative ml-16 md:ml-20 lg:ml-24">
+      <main id="main">
+        <!-- ===================== HERO ===================== -->
+        <header
+          id="hero"
+          class="relative flex min-h-[92vh] flex-col justify-center px-6 py-48 md:px-12 lg:px-20 xl:px-28"
+        >
+          <!-- Decorative ink wash layers -->
+          <div class="mountains-layer pointer-events-none" aria-hidden="true"></div>
+          <div
+            class="splash-blob pointer-events-none absolute right-[8%] top-[18%] h-28 w-36 opacity-40"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="splash-blob pointer-events-none absolute bottom-[22%] left-[6%] h-20 w-24 opacity-30"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Gold corner accent -->
+          <span class="corner-gold pointer-events-none absolute left-8 top-12" aria-hidden="true"></span>
+
+          <div class="relative max-w-4xl space-y-12">
+            <div class="flex items-start gap-6">
+              <div
+                class="seal-mark flex h-16 w-16 shrink-0 rotate-[2deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink hover:rotate-0"
+                aria-hidden="true"
+              >
+                <span class="vertical-text font-seal text-xl">境</span>
+              </div>
+              <p class="font-xing text-2xl tracking-[0.3em] text-landscape md:text-3xl">
+                茶与艺 · Tea &amp; Art
+              </p>
+            </div>
+
+            <h1
+              class="font-cao text-[clamp(3.5rem,13vw,8rem)] leading-[1.05] text-ink-burnt opacity-0 animate-fade-in"
+            >
+              水墨意境
+            </h1>
+
+            <p
+              class="font-xing text-3xl tracking-[0.15em] text-ink-heavy md:text-5xl opacity-0 animate-fade-in-delay"
+            >
+              以空载意，以淡显深
+            </p>
+
+            <p
+              class="max-w-xl font-kai text-xl leading-relaxed text-ink-dense md:text-2xl opacity-0 animate-fade-in-delay-2"
+            >
+              气韵乃水墨之魂。留白不是空无，而是意义的延伸；五墨层次，焦浓重淡清，层层晕染，方得山水之远与心境之静。
+            </p>
+
+            <p class="font-serif text-sm font-light tracking-wide text-ink-light opacity-0 animate-fade-in-delay-2">
+              Spirit resonance over likeness — emptiness extends meaning, ink gradation
+              reveals depth.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-8 pt-8 opacity-0 animate-fade-in-delay-3">
+              <a
+                href="#gallery"
+                class="group inline-flex items-center gap-3 border border-landscape/40 bg-landscape/5 px-8 py-3 font-xing text-xl tracking-widest text-landscape transition-all duration-ink ease-bleed hover:border-seal hover:bg-seal/5 hover:text-seal"
+              >
+                观展 Enter
+                <svg class="h-4 w-4 stroke-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h15M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a
+                href="#philosophy"
+                class="font-xing text-xl tracking-widest text-ink-light transition-colors duration-ink hover:text-seal"
+                >品牌理念</a
+              >
+            </div>
+          </div>
+
+          <!-- Brush stroke decoration -->
+          <svg
+            class="brush-stroke pointer-events-none absolute bottom-24 right-[12%] hidden h-8 w-48 text-ink-burnt/20 lg:block"
+            viewBox="0 0 200 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 12 Q40 4, 80 14 T160 8 T198 11"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              filter="url(#brush)"
+            />
+            <defs>
+              <filter id="brush">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+              </filter>
+            </defs>
+          </svg>
+        </header>
+
+        <!-- ===================== PHILOSOPHY ===================== -->
+        <section
+          id="philosophy"
+          class="relative px-6 py-48 md:px-12 lg:px-20 xl:px-28"
+          aria-labelledby="philosophy-heading"
+        >
+          <div class="mb-32 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+            <span class="font-seal text-lg text-seal">壹</span>
+            <h2
+              id="philosophy-heading"
+              class="font-xing text-4xl tracking-[0.12em] text-ink-burnt md:text-5xl lg:text-6xl"
+            >
+              品牌致理
+            </h2>
+            <span class="font-serif text-sm font-light tracking-widest text-ink-light">Brand Philosophy</span>
+          </div>
+
+          <div class="grid gap-20 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+            <blockquote
+              class="vertical-text self-start font-xingcao text-3xl leading-loose tracking-[0.2em] text-ink-heavy/80 lg:text-4xl"
+            >
+              意先笔后<br />气韵生动
+            </blockquote>
+
+            <div class="space-y-12">
+              <article class="reveal space-y-6 border-l border-ink-clear/60 pl-8">
+                <h3 class="font-xing text-3xl tracking-widest text-landscape">留白 · Negative Space</h3>
+                <p class="font-kai text-xl leading-relaxed text-ink-dense md:text-2xl">
+                  空非无物，而是让观者的心神得以停驻。我们的茶席、展陈与数字界面，皆留四成以上空白，使器物与文字呼吸。
+                </p>
+                <p class="font-serif text-sm font-light leading-relaxed text-ink-light">
+                  Emptiness is not void — it is where meaning breathes. At least forty percent
+                  whitespace in every composition.
+                </p>
+              </article>
+
+              <article class="reveal space-y-6 border-l border-ink-clear/60 pl-8">
+                <h3 class="font-xing text-3xl tracking-widest text-landscape">五墨 · Five Shades</h3>
+                <p class="font-kai text-xl leading-relaxed text-ink-dense md:text-2xl">
+                  从焦墨至清墨，层次如远山近水。品牌视觉以五墨为纲，不以艳色夺势，而以浓淡生境。
+                </p>
+                <ul class="flex flex-wrap gap-3 pt-2">
+                  <li
+                    class="rounded-sm bg-ink-burnt px-4 py-2 font-serif text-xs text-ivory"
+                    title="Burnt ink"
+                  >
+                    焦
+                  </li>
+                  <li class="rounded-sm bg-ink-dense px-4 py-2 font-serif text-xs text-ivory">浓</li>
+                  <li class="rounded-sm bg-ink-heavy px-4 py-2 font-serif text-xs text-ivory">重</li>
+                  <li class="rounded-sm bg-ink-light px-4 py-2 font-serif text-xs text-ivory">淡</li>
+                  <li class="rounded-sm bg-ink-clear px-4 py-2 font-serif text-xs text-ink-dense">清</li>
+                </ul>
+              </article>
+
+              <article class="reveal space-y-6 border-l border-ink-clear/60 pl-8">
+                <h3 class="font-xing text-3xl tracking-widest text-landscape">神似 · Spirit Resonance</h3>
+                <p class="font-kai text-xl leading-relaxed text-ink-dense md:text-2xl">
+                  不求形似而求神似。每一件展陈、每一款茶品，皆传达一种心境——静、远、清、和。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== GALLERY ===================== -->
+        <section
+          id="gallery"
+          class="relative bg-beige/30 px-6 py-48 md:px-12 lg:px-20 xl:px-28"
+          aria-labelledby="gallery-heading"
+        >
+          <div class="mountains-layer mountains-layer--soft pointer-events-none" aria-hidden="true"></div>
+
+          <div class="relative mb-32 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+            <span class="font-seal text-lg text-seal">贰</span>
+            <h2
+              id="gallery-heading"
+              class="font-xing text-4xl tracking-[0.12em] text-ink-burnt md:text-5xl lg:text-6xl"
+            >
+              作品展陈
+            </h2>
+            <span class="font-serif text-sm font-light tracking-widest text-ink-light">Artwork Showcase</span>
+          </div>
+
+          <div class="grid gap-12 md:grid-cols-2 lg:gap-16 xl:grid-cols-3">
+            <!-- Card 1 -->
+            <article
+              class="gallery-card reveal group relative overflow-hidden border border-ink-burnt/10 bg-ivory/60 p-8 transition-all duration-ink ease-bleed hover:border-landscape/30 hover:shadow-lg hover:shadow-ink-burnt/5"
+            >
+              <div
+                class="ink-wash-bg mb-8 aspect-[4/5] w-full bg-gradient-to-b from-ink-clear/20 via-landscape/10 to-ink-burnt/15"
+                role="img"
+                aria-label="Landscape ink wash — distant mountains"
+              ></div>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-xing text-2xl tracking-widest text-ink-burnt">云山图</h3>
+                  <p class="mt-2 font-serif text-xs font-light text-ink-light">Cloud Mountains · 2026</p>
+                </div>
+                <div
+                  class="seal-mark flex h-12 w-12 shrink-0 rotate-[-2deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink group-hover:rotate-0"
+                  aria-hidden="true"
+                >
+                  <span class="vertical-text font-seal text-sm">山</span>
+                </div>
+              </div>
+              <p class="mt-6 font-kai text-lg leading-relaxed text-ink-heavy">
+                远峰如黛，近水含烟。以淡墨层层晕染，见天地之大与人心之静。
+              </p>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="gallery-card reveal group relative overflow-hidden border border-ink-burnt/10 bg-paper p-8 transition-all duration-ink ease-bleed hover:border-landscape/30 hover:shadow-lg hover:shadow-ink-burnt/5 md:translate-y-12"
+            >
+              <div
+                class="ink-wash-bg mb-8 aspect-[4/5] w-full bg-gradient-to-br from-ink-burnt/10 via-transparent to-seal/10"
+                role="img"
+                aria-label="Plum blossom ink study"
+              ></div>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-xing text-2xl tracking-widest text-ink-burnt">寒梅清供</h3>
+                  <p class="mt-2 font-serif text-xs font-light text-ink-light">Winter Plum · 2025</p>
+                </div>
+                <div
+                  class="seal-mark flex h-12 w-12 shrink-0 rotate-[3deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink group-hover:rotate-0"
+                  aria-hidden="true"
+                >
+                  <span class="vertical-text font-seal text-sm">梅</span>
+                </div>
+              </div>
+              <p class="mt-6 font-kai text-lg leading-relaxed text-ink-heavy">
+                一枝横斜，几点焦墨。梅者，傲雪之骨；供者，清心之仪。
+              </p>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="gallery-card reveal group relative overflow-hidden border border-ink-burnt/10 bg-ivory/60 p-8 transition-all duration-ink ease-bleed hover:border-landscape/30 hover:shadow-lg hover:shadow-ink-burnt/5 md:col-span-2 xl:col-span-1"
+            >
+              <div
+                class="ink-wash-bg mb-8 aspect-[4/5] w-full bg-gradient-to-t from-landscape/15 via-ink-clear/10 to-transparent xl:aspect-[16/10]"
+                role="img"
+                aria-label="Bamboo and orchid composition"
+              ></div>
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-xing text-2xl tracking-widest text-ink-burnt">兰竹双清</h3>
+                  <p class="mt-2 font-serif text-xs font-light text-ink-light">Orchid &amp; Bamboo · 2026</p>
+                </div>
+                <div
+                  class="seal-mark flex h-12 w-12 shrink-0 rotate-[-3deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink group-hover:rotate-0"
+                  aria-hidden="true"
+                >
+                  <span class="vertical-text font-seal text-sm">清</span>
+                </div>
+              </div>
+              <p class="mt-6 font-kai text-lg leading-relaxed text-ink-heavy">
+                兰之幽，竹之劲。行草题跋，与画面互为呼吸。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== POETRY ===================== -->
+        <section
+          id="poetry"
+          class="relative px-6 py-48 md:px-12 lg:px-20 xl:px-28"
+          aria-labelledby="poetry-heading"
+        >
+          <div class="mb-32 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+            <span class="font-seal text-lg text-seal">叁</span>
+            <h2
+              id="poetry-heading"
+              class="font-xing text-4xl tracking-[0.12em] text-ink-burnt md:text-5xl lg:text-6xl"
+            >
+              诗意留痕
+            </h2>
+            <span class="font-serif text-sm font-light tracking-widest text-ink-light">Poetry &amp; Literature</span>
+          </div>
+
+          <div class="mx-auto max-w-3xl space-y-20 text-center">
+            <figure class="reveal space-y-8">
+              <blockquote class="font-xingcao text-3xl leading-loose tracking-[0.15em] text-ink-dense md:text-4xl">
+                行到水穷处<br />坐看云起时
+              </blockquote>
+              <figcaption class="font-kai text-lg text-ink-light">王维 · 终南别业</figcaption>
+            </figure>
+
+            <hr class="mx-auto w-24 border-0 bg-gradient-to-r from-transparent via-ink-clear to-transparent h-px" />
+
+            <figure class="reveal space-y-8">
+              <blockquote class="font-xingcao text-3xl leading-loose tracking-[0.15em] text-ink-dense md:text-4xl">
+                一花一世界<br />一叶一如来
+              </blockquote>
+              <figcaption class="font-serif text-sm font-light text-ink-light">
+                From leaf to cosmos — the ink wash way of seeing
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section
+          id="contact"
+          class="relative border-t border-ink-burnt/10 bg-ivory/40 px-6 py-48 md:px-12 lg:px-20 xl:px-28"
+          aria-labelledby="contact-heading"
+        >
+          <div class="mb-32 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+            <span class="font-seal text-lg text-seal">肆</span>
+            <h2
+              id="contact-heading"
+              class="font-xing text-4xl tracking-[0.12em] text-ink-burnt md:text-5xl lg:text-6xl"
+            >
+              联络雅集
+            </h2>
+            <span class="font-serif text-sm font-light tracking-widest text-ink-light">Contact</span>
+          </div>
+
+          <div class="grid gap-20 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div class="space-y-12">
+              <p class="max-w-lg font-kai text-xl leading-relaxed text-ink-dense md:text-2xl">
+                欢迎预约茶席体验、展陈合作与文化沙龙。以书会友，以茶传心。
+              </p>
+              <address class="not-italic space-y-4 font-xing text-xl tracking-widest text-ink-heavy">
+                <p>
+                  <span class="text-ink-light">址 · </span>杭州市西湖区 · West Lake, Hangzhou
+                </p>
+                <p>
+                  <span class="text-ink-light">邮 · </span>
+                  <a
+                    href="mailto:hello@ink-wash.example"
+                    class="text-landscape underline-offset-4 transition-colors duration-ink hover:text-seal"
+                    >hello@ink-wash.example</a
+                  >
+                </p>
+                <p>
+                  <span class="text-ink-light">时 · </span>周二至周日 · 10:00 — 18:00
+                </p>
+              </address>
+            </div>
+
+            <div class="flex flex-col items-center gap-8">
+              <div
+                class="seal-mark flex h-20 w-20 rotate-[-3deg] items-center justify-center bg-seal text-ivory shadow-seal-inset transition-transform duration-ink hover:rotate-0"
+                aria-hidden="true"
+              >
+                <span class="vertical-text font-seal text-2xl">印</span>
+              </div>
+              <p class="vertical-text font-xingcao text-xl tracking-[0.2em] text-ink-light">
+                水墨雅集 · Ink Wash Studio
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-ink-burnt/10 px-6 py-16 md:px-12 lg:px-20 xl:px-28">
+        <div class="flex flex-wrap items-center justify-between gap-6 text-ink-light">
+          <p class="font-kai text-sm">&copy; <span id="year">2026</span> 水墨意境 Ink Wash Studio</p>
+          <p class="font-serif text-xs font-light tracking-widest">
+            Crafted with xuan paper, five shades of ink, and calligraphy
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../assets/js/ink-wash-demo.js" defer></script>
+  </body>
+</html>
