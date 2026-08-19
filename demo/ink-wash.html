@@ -38,12 +38,12 @@
               landscape: "#2E8B57",
             },
             fontFamily: {
-              cao: ['"Liu Jian Mao Cao"', "cursive"],
-              xing: ['"Ma Shan Zheng"', "cursive"],
-              xingcao: ['"Zhi Mang Xing"', "cursive"],
-              kai: ['"ZCOOL XiaoWei"', "serif"],
-              seal: ['"ZCOOL KuaiLe"', "cursive"],
-              serif: ['"Noto Serif SC"', "Songti SC", "serif"],
+              cao: ['"Liu Jian Mao Cao"', '"KaiTi"', '"STKaiti"', "serif"],
+              xing: ['"Ma Shan Zheng"', '"KaiTi"', '"STKaiti"', "serif"],
+              xingcao: ['"Zhi Mang Xing"', '"KaiTi"', '"STKaiti"', "serif"],
+              kai: ['"ZCOOL XiaoWei"', '"Noto Serif SC"', '"Songti SC"', "serif"],
+              seal: ['"ZCOOL KuaiLe"', '"SimHei"', "sans-serif"],
+              serif: ['"Noto Serif SC"', '"Songti SC"', '"SimSun"', "serif"],
             },
             transitionDuration: {
               ink: "1000ms",
@@ -197,29 +197,32 @@
             </div>
 
             <h1
-              class="font-cao text-[clamp(3.5rem,13vw,8rem)] leading-[1.05] text-ink-burnt opacity-0 animate-fade-in"
+              class="font-cao text-[clamp(3.5rem,13vw,8rem)] leading-[1.05] text-ink-burnt hero-fade-in"
+              lang="zh"
             >
               水墨意境
             </h1>
 
             <p
-              class="font-xing text-3xl tracking-[0.15em] text-ink-heavy md:text-5xl opacity-0 animate-fade-in-delay"
+              class="font-xing text-3xl tracking-[0.15em] text-ink-heavy md:text-5xl hero-fade-in hero-fade-in--1"
+              lang="zh"
             >
               以空载意，以淡显深
             </p>
 
             <p
-              class="max-w-xl font-kai text-xl leading-relaxed text-ink-dense md:text-2xl opacity-0 animate-fade-in-delay-2"
+              class="max-w-xl font-kai text-xl leading-relaxed text-ink-dense md:text-2xl hero-fade-in hero-fade-in--2"
+              lang="zh"
             >
               气韵乃水墨之魂。留白不是空无，而是意义的延伸；五墨层次，焦浓重淡清，层层晕染，方得山水之远与心境之静。
             </p>
 
-            <p class="font-serif text-sm font-light tracking-wide text-ink-light opacity-0 animate-fade-in-delay-2">
+            <p class="font-serif text-sm font-light tracking-wide text-ink-light hero-fade-in hero-fade-in--2">
               Spirit resonance over likeness — emptiness extends meaning, ink gradation
               reveals depth.
             </p>
 
-            <div class="flex flex-wrap items-center gap-8 pt-8 opacity-0 animate-fade-in-delay-3">
+            <div class="flex flex-wrap items-center gap-8 pt-8 hero-fade-in hero-fade-in--3">
               <a
                 href="#gallery"
                 class="group inline-flex items-center gap-3 border border-landscape/40 bg-landscape/5 px-8 py-3 font-xing text-xl tracking-widest text-landscape transition-all duration-ink ease-bleed hover:border-seal hover:bg-seal/5 hover:text-seal"

@@ -52,12 +52,12 @@
   --wrap: 1180px;
   --gutter: clamp(1.1rem, 4vw, 2.75rem);
 
-  --font-cao: "Liu Jian Mao Cao", cursive;
-  --font-xing: "Ma Shan Zheng", cursive;
-  --font-xingcao: "Zhi Mang Xing", cursive;
-  --font-kai: "ZCOOL XiaoWei", serif;
-  --font-seal: "ZCOOL KuaiLe", cursive;
-  --font-serif: "Noto Serif SC", "Songti SC", serif;
+  --font-cao: "Liu Jian Mao Cao", "KaiTi", "STKaiti", "FangSong", serif;
+  --font-xing: "Ma Shan Zheng", "KaiTi", "STKaiti", "SimSun", serif;
+  --font-xingcao: "Zhi Mang Xing", "KaiTi", "STKaiti", serif;
+  --font-kai: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-seal: "ZCOOL KuaiLe", "SimHei", "Heiti SC", sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
   --font-sans: var(--font-kai);
 
   --step: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -449,6 +449,23 @@ svg {
   font-family: var(--font-xing);
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   letter-spacing: 0.06em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.85rem;
+}
+
+.section__title-zh {
+  font-family: var(--font-xing);
+  color: var(--ink-burnt);
+}
+
+.section__title-en {
+  font-family: var(--font-serif);
+  font-size: 0.55em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
 }
 
 .section__rule {
@@ -596,6 +613,15 @@ svg {
   transition: color var(--step), border-color var(--step);
 }
 
+.nav__zh {
+  margin-right: 0.35rem;
+  color: var(--ink-burnt);
+}
+
+[data-theme="ink"] .nav__zh {
+  color: var(--text);
+}
+
 .nav__list a:hover {
   color: var(--text);
   border-bottom-color: var(--line-strong);
@@ -713,24 +739,43 @@ svg {
   margin-bottom: 1rem;
 }
 
-.hero__name {
+.hero__theme {
+  margin-bottom: 0.35rem;
   font-family: var(--font-cao);
-  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-size: clamp(3rem, 11vw, 6.5rem);
   line-height: 1.05;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   color: var(--ink-burnt);
 }
 
-[data-theme="ink"] .hero__name {
+[data-theme="ink"] .hero__theme {
   color: var(--text);
 }
 
-.hero__role {
-  margin-top: 0.5rem;
+.hero__name {
   font-family: var(--font-xing);
-  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-  letter-spacing: 0.18em;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  color: var(--ink-dense);
+}
+
+.hero__role {
+  margin-top: 0.65rem;
+  font-family: var(--font-xing);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  letter-spacing: 0.12em;
   color: var(--landscape);
+}
+
+.hero__role-en {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 0.72em;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
 }
 
 .hero__disciplines {

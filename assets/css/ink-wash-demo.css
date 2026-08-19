@@ -131,7 +131,32 @@
   }
 }
 
-/* Hero fade-in sequence */
+/* Hero fade-in — visible by default; animates when motion allowed */
+.hero-fade-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fade-rise 2.5s ease-out forwards;
+  }
+
+  .hero-fade-in--1 {
+    animation-delay: 0.4s;
+  }
+
+  .hero-fade-in--2 {
+    animation-delay: 0.8s;
+  }
+
+  .hero-fade-in--3 {
+    animation-delay: 1.2s;
+  }
+}
+
 @keyframes fade-rise {
   from {
     opacity: 0;
@@ -143,32 +168,23 @@
   }
 }
 
-.animate-fade-in {
-  animation: fade-rise 2.5s ease-out 0.2s forwards;
-}
-
-.animate-fade-in-delay {
-  animation: fade-rise 2.5s ease-out 0.6s forwards;
-}
-
-.animate-fade-in-delay-2 {
-  animation: fade-rise 2.5s ease-out 1s forwards;
-}
-
-.animate-fade-in-delay-3 {
-  animation: fade-rise 2.5s ease-out 1.4s forwards;
-}
-
-/* Scroll reveal */
+/* Scroll reveal — visible without JS */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease-out, transform 2s ease-out;
-}
-
-.reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Parallax sections — driven by JS custom property */
@@ -177,12 +193,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-in,
-  .animate-fade-in-delay,
-  .animate-fade-in-delay-2,
-  .animate-fade-in-delay-3 {
-    animation: none;
+  .hero-fade-in,
+  .hero-fade-in--1,
+  .hero-fade-in--2,
+  .hero-fade-in--3 {
     opacity: 1;
+    transform: none;
+    animation: none;
   }
 
   .reveal {
